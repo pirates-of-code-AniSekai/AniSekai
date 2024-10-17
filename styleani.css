@@ -12,7 +12,7 @@
 }
 .loginbox {
     position: absolute;
-    z-index: 100;
+    z-index: 2;
     top: 13vh;
     left: 35vw;
     width: 30vw; 
@@ -24,12 +24,10 @@
     color: rgb(192, 240, 254);
     border-radius: 5%;
     padding: 5vh;
-    transform: scale(0.5);
     opacity: 0;
     transition: transform 0.5s, opacity 0.5s;
 }
 .login .loginbox.open {
-    transform: scale(1);
     opacity: 1;
   }
 h2 {
@@ -152,7 +150,7 @@ h2 {
     height: 100vh;
     position: absolute;
     background-color: rgba(0, 0, 0,0.4);
-    z-index: 4;
+    z-index: 1;
     display: none;
 }
 .banner {
@@ -201,7 +199,6 @@ h2 {
 }
 .loginbutton:hover{
     color: #bee2e2;
-    z-index: 1;
     cursor: pointer;
 }
 .banner .slider {
@@ -211,9 +208,7 @@ h2 {
     top: 20%;
     left: calc(50% - 100px);
     transform-style: preserve-3d;
-    transform: perspective(1000px);
     animation: autoRun 35s linear infinite;
-    z-index: 3;
 }
 @keyframes autoRun{
     from{
