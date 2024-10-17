@@ -8,7 +8,7 @@ openLogin.addEventListener('click', () => {
   if (isOpen) {
     login.style.display = 'flex';
     cover.style.display = 'flex';
-    openLogin.style.zIndex = 5;
+    openLogin.style.zIndex = 3;
   } else {
     login.style.display = 'none';
     cover.style.display = 'none';
