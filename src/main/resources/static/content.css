@@ -51,7 +51,7 @@ body{
     height: 25vh;
     overflow-y: scroll;
     scrollbar-width: thin;
-    margin-bottom: 1.5%;
+    margin-bottom: 5%;
 }
 .about button{
     margin-right: 1%;
