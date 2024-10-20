@@ -128,70 +128,6 @@ body::-webkit-scrollbar {
         top: 0;
     }
 }
-/* .maincontent .content{
-    margin: 3vw 2vw;
-}
-.content h1{
-    margin-bottom: 2vh;
-    font-weight: bolder;
-}
-.content ul{
-    column-gap: 2vh;
-    display: flex;
-    overflow-x: scroll;
-}
-.content ul::-webkit-scrollbar {
-    display: none;
-}
-.content ul li{
-    height: 45vh;
-    width: 15vw;
-    display: flex;
-    z-index: 1;
-    transition: filter 0.4s ease-in-out, width 0.4s ease-in-out;
-}
-.content ul li img{
-    height: 100%;
-    width: 15vw;
-    border-radius: 3%;
-}
-.aboutanime{
-    width: 30vh;
-    padding: 8%;
-    background-color:#124559;
-    opacity: 0;
-    border-top-right-radius: 3%;
-    border-bottom-right-radius: 3%;
-    transition: width 1s ease-in-out;
-}
-.aboutmenu{
-    width: 3vh;
-    height: 3vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #bee2e2;
-    padding: 1vh;
-    margin: 0.5vh;
-    border-radius: 50px;
-}
-.content ul li img:hover{
-    border-top-right-radius: 0%;
-    border-bottom-right-radius: 0%;
-    cursor: pointer;
-    z-index: 2;
-}
-.content ul li:hover .aboutanime{
-    cursor: pointer;
-    opacity: 1;
-    border-left: none;
-}
-.content ul li:hover{
-    z-index: 2;
-    /* position: absolute; */
-/* filter: drop-shadow(0rem 0.5rem 0.5rem #bee2e2);
-}  */
-
 .content{
     margin: 3vw 2vw;
     padding: 2vh;
@@ -209,23 +145,20 @@ body::-webkit-scrollbar {
 .grid-container {
     display: flex;
     gap: 2vh;
-    /* overflow: visible; */
-    /* overflow-x: scroll;
-    overflow-y: hidden; */
 }
 .grid-container li {
-    height: 50vh;
-    width: 15vw;
+    height: 34vh;
+    width: 23vh;
     display: flex;
     z-index: 1;
     overflow: visible;
     transition: filter 0.4s ease-in-out;
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.6s ease-in-out;
 }
 
 .grid-container li img{
     height: 100%;
-    width: 15vw;
+    width: 23vh;
     border-radius: 3%;
     object-fit: cover;
 }
