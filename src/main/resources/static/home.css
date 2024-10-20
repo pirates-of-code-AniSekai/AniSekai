@@ -9,7 +9,7 @@
     font-weight: 400;
 }
 body{
-    background-color: #0c303e;
+    background-color: #061e28;
     /* background: linear-gradient(#0c2e3c,#01161e); */
 }
 body::-webkit-scrollbar {
@@ -122,9 +122,12 @@ body::-webkit-scrollbar {
         height: 400px;
     }
 }
+.maincontent li{
+    height: 50vh;
+}
 .content{
-    margin: 3vw 2vw;
-    padding: 2vh;
+    margin: 1vw 2vw;
+    padding: 4vh 4vh 20vh 4vh;
     overflow: scroll;
     scrollbar-width: none;/* Hide scrollbar for Firefox */
 }
@@ -134,7 +137,8 @@ body::-webkit-scrollbar {
 .genre{
     position: relative;
     top: 4vh;
-    padding-left: 3vw;
+    padding-left: 4vw;
+    font-weight: bolder;
 }
 .grid-container {
     display: flex;
@@ -157,28 +161,45 @@ body::-webkit-scrollbar {
     object-fit: cover;
 }
 .aboutanime{
-    width: 30vh;
     padding: 8%;
-    background-color:#124559;
+    width: 10vw;
+    /* background-color:#124559; */
+    background-color: #123c4a;
     display: none;
     border-top-right-radius: 3%;
     border-bottom-right-radius: 3%;
     transition: width 1s ease-in-out;
 }
 .animecontent{
+    font-size: small;
+    overflow:hidden;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.aboutanime h3{
+    height: 10%;
+    overflow:hidden;
     text-overflow: ellipsis;
-    overflow: hidden;
-    height: 70%;
+    white-space:nowrap;
+}
+.innerabout{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 34vh;
+    width: 23vh;
 }
 .aboutmenu{
-    width: 3vh;
-    height: 3vh;
+    width: 2vh;
+    height: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid #bee2e2;
     padding: 1vh;
-    margin: 0.5vh;
+    margin: 0 0.5vh;
     border-radius: 50px;
 }
 .grid-container li img:hover{
@@ -190,13 +211,13 @@ body::-webkit-scrollbar {
 }
 .grid-container li:hover .aboutanime{
     cursor: pointer;
-    display: block;
+    display: inline-block;
     border-left: none;
 }
 .grid-container li:hover{
     position:relative;
     z-index: 2;
-    transform: scale(1.05);
+    transform: scale(1.2);
     filter: drop-shadow(0rem 0.2rem 0.2rem #bee2e2);
 }
 .footer{

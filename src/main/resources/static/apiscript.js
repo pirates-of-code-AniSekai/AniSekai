@@ -10,11 +10,11 @@ async function getTrending() {
         const json = await response.json();
         json.results.map(data => {
             let childHtml = `<img src=${data.image}>
-                        <div class="aboutanime" style="text-align:justify;">
-                            <h2>${data.title.english}</h2><br>
-                            <p class="animecontent">${data.description}</p>
+                        <div class="aboutanime">
+                            <h3 style="font-weight:bolder">${data.title.english}</h3>
+                            <p class="animecontent" style="text-align:justify;">${data.description}</p>
                             <div class="aboutMenu"
-                                 style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
+                                 style="display: flex; justify-content: space-evenly; height:20%;">
                                 <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
                                 <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
                                 <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
@@ -44,11 +44,11 @@ async function getPopular() {
         const json = await response.json();
         json.results.map(data => {
             let childHtml = `<img src=${data.image}>
-                        <div class="aboutanime" style="text-align:justify;">
-                            <h2>${data.title.english}</h2><br>
-                            <p class="animecontent">${data.description}</p>
+                        <div class="aboutanime">
+                            <h3 style="font-weight:bolder">${data.title.english}</h3>
+                            <p class="animecontent" style="text-align:justify;">${data.description}</p>
                             <div class="aboutMenu"
-                                 style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
+                                 style="display: flex; justify-content: space-evenly; height:20%;">
                                 <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
                                 <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
                                 <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
@@ -79,11 +79,11 @@ async function getSpecial() {
         const json = await response.json();
         json.results.map(data => {
             let childHtml = `<img src=${data.image}>
-                        <div class="aboutanime" style="text-align:justify;">
-                            <h2>${data.title.english}</h2><br>
-                            <p class="animecontent">${data.description}</p>
+                        <div class="aboutanime">
+                            <h3 style="font-weight:bolder">${data.title.english}</h3>
+                            <p class="animecontent" style="text-align:justify;">${data.description}</p>
                             <div class="aboutMenu"
-                                 style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
+                                 style="display: flex; justify-content: space-evenly; height:20%;">
                                 <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
                                 <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
                                 <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
@@ -111,11 +111,11 @@ async function getMovies() {
         const json = await response.json();
         json.results.map(data => {
             let childHtml = `<img src=${data.image}>
-                        <div class="aboutanime" style="text-align:justify;">
-                            <h2>${data.title.english}</h2><br>
-                            <p class="animecontent">${data.description}</p>
+                        <div class="aboutanime">
+                            <h3 style="font-weight:bolder">${data.title.english}</h3>
+                            <p class="animecontent" style="text-align:justify;">${data.description}</p>
                             <div class="aboutMenu"
-                                 style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
+                                 style="display: flex; justify-content: space-evenly; height:20%;">
                                 <div class="aboutmenu"><img title="LIKE" src="Icons/heart.png"></div>
                                 <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
                                 <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
