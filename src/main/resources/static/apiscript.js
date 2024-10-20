@@ -23,7 +23,13 @@ async function getTrending() {
                         </div>
                         `;
             let child = document.createElement("li");
-            child.innerHTML = childHtml
+            child.innerHTML = childHtml;
+            child.addEventListener("click",() => {
+                localStorage.clear();
+                localStorage.setItem("anime_id",data.id);
+
+                window.location.href = "content.html";
+            })
             trendingGridDiv.appendChild(child);
         })
     } catch (error) {
@@ -52,7 +58,13 @@ async function getPopular() {
                         `;
         
             let child = document.createElement("li");
-            child.innerHTML = childHtml
+            child.innerHTML = childHtml;
+            child.addEventListener("click",() => {
+                localStorage.clear();
+                localStorage.setItem("anime_id",data.id);
+
+                window.location.href = "content.html";
+            })
             popularListDiv.appendChild(child);
         })
         
@@ -65,7 +77,6 @@ async function getSpecial() {
     try {
         const response = await fetch(`${baseUrl}/meta/anilist/advanced-search?format=SPECIAL`);
         const json = await response.json();
-        console.log(json)
         json.results.map(data => {
             let childHtml = `<img src=${data.image}>
                         <div class="aboutanime" style="text-align:justify;">
@@ -80,14 +91,17 @@ async function getSpecial() {
                             </div>
                         </div>
                         `;
-            console.log(data)
             let child = document.createElement("li");
-            child.innerHTML = childHtml
+            child.innerHTML = childHtml;
+            child.addEventListener("click",() => {
+                localStorage.clear();
+                localStorage.setItem("anime_id",data.id);
+
+                window.location.href = "content.html";
+            })
             specialListDiv.appendChild(child);
         })
-        console.log(json.results)
     } catch (error) {
-        console.error(error)
     }
 }
 
@@ -95,7 +109,6 @@ async function getMovies() {
     try {
         const response = await fetch(`${baseUrl}/meta/anilist/advanced-search?format=MOVIE`);
         const json = await response.json();
-        console.log(json)
         json.results.map(data => {
             let childHtml = `<img src=${data.image}>
                         <div class="aboutanime" style="text-align:justify;">
@@ -110,12 +123,17 @@ async function getMovies() {
                             </div>
                         </div>
                         `;
-            console.log(data)
             let child = document.createElement("li");
             child.innerHTML = childHtml
+            child.addEventListener("click",() => {
+                localStorage.clear();
+                localStorage.setItem("anime_id",data.id);
+
+                window.location.href = "content.html";
+            });
             movieListDiv.appendChild(child);
         })
-        console.log(json.results)
+
     } catch (error) {
         console.error(error)
     }
