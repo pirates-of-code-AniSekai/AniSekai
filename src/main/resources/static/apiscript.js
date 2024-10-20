@@ -9,18 +9,18 @@ async function getTrending() {
         const response = await fetch(`${baseUrl}/meta/anilist/trending`);
         const json = await response.json();
         json.results.map(data => {
-            let childHtml = `<img src="${data.image}">
-                            <div class="aboutanime" style="text-align:justify;">
-                                <h2>${data.title.english}</h2><br>
-                                <p>${data.description}</p>
-                                <div class="aboutMenu"
-                                    style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
-                                    <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
-                                    <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
-                                    <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
-                                    <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
-                                </div>
+            let childHtml = `<img src=${data.image}>
+                        <div class="aboutanime" style="text-align:justify;">
+                            <h2>${data.title.english}</h2><br>
+                            <p class="animecontent">${data.description}</p>
+                            <div class="aboutMenu"
+                                 style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
+                                <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
+                                <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
+                                <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
+                                <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
                             </div>
+                        </div>
                         `;
             let child = document.createElement("li");
             child.innerHTML = childHtml
@@ -37,18 +37,18 @@ async function getPopular() {
         const response = await fetch(`${baseUrl}/meta/anilist/popular`);
         const json = await response.json();
         json.results.map(data => {
-            let childHtml = `<img src="${data.image}">
-                            <div class="aboutanime" style="text-align:justify;">
-                                <h2>${data.title.english}</h2><br>
-                                <p>${data.description}</p>
-                                <div class="aboutMenu"
-                                    style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
-                                    <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
-                                    <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
-                                    <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
-                                    <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
-                                </div>
+            let childHtml = `<img src=${data.image}>
+                        <div class="aboutanime" style="text-align:justify;">
+                            <h2>${data.title.english}</h2><br>
+                            <p class="animecontent">${data.description}</p>
+                            <div class="aboutMenu"
+                                 style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
+                                <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
+                                <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
+                                <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
+                                <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
                             </div>
+                        </div>
                         `;
         
             let child = document.createElement("li");
@@ -67,18 +67,18 @@ async function getSpecial() {
         const json = await response.json();
         console.log(json)
         json.results.map(data => {
-            let childHtml = `<img src="${data.image}">
-                            <div class="aboutanime" style="text-align:justify;">
-                                <h2>${data.title.english}</h2><br>
-                                <p>${data.description}</p>
-                                <div class="aboutMenu"
-                                    style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
-                                    <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
-                                    <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
-                                    <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
-                                    <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
-                                </div>
+            let childHtml = `<img src=${data.image}>
+                        <div class="aboutanime" style="text-align:justify;">
+                            <h2>${data.title.english}</h2><br>
+                            <p class="animecontent">${data.description}</p>
+                            <div class="aboutMenu"
+                                 style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
+                                <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
+                                <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
+                                <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
+                                <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
                             </div>
+                        </div>
                         `;
             console.log(data)
             let child = document.createElement("li");
@@ -97,18 +97,18 @@ async function getMovies() {
         const json = await response.json();
         console.log(json)
         json.results.map(data => {
-            let childHtml = `<img src="${data.image}">
-                            <div class="aboutanime" style="text-align:justify;">
-                                <h2>${data.title.english}</h2><br>
-                                <p>${data.description}</p>
-                                <div class="aboutMenu"
-                                    style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
-                                    <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
-                                    <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
-                                    <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
-                                    <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
-                                </div>
+            let childHtml = `<img src=${data.image}>
+                        <div class="aboutanime" style="text-align:justify;">
+                            <h2>${data.title.english}</h2><br>
+                            <p class="animecontent">${data.description}</p>
+                            <div class="aboutMenu"
+                                 style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
+                                <div class="aboutmenu"><img title="LIKE" src="Icons/heart.png"></div>
+                                <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
+                                <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
+                                <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
                             </div>
+                        </div>
                         `;
             console.log(data)
             let child = document.createElement("li");
