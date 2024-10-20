@@ -3,19 +3,19 @@
     padding: 0;
     color: #bee2e2;
     box-sizing: border-box;
-    font-family: costa, sans-serif;
+    font-family: century-gothic, sans-serif;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
 }
 .login{
     display: none;
 }
 .loginbox {
     position: absolute;
-    z-index: 100;
+    z-index: 2;
     top: 13vh;
     left: 35vw;
-    width: 30vw; 
+    width: 30vw;
     height: 70vh;
     background-color: rgba(26, 94, 121, 0.7);
     backdrop-filter: blur(10px);
@@ -24,14 +24,12 @@
     color: rgb(192, 240, 254);
     border-radius: 5%;
     padding: 5vh;
-    transform: scale(0.5);
     opacity: 0;
     transition: transform 0.5s, opacity 0.5s;
 }
 .login .loginbox.open {
-    transform: scale(1);
     opacity: 1;
-  }
+}
 h2 {
     font-size: 2rem;
     text-align: center;
@@ -152,7 +150,7 @@ h2 {
     height: 100vh;
     position: absolute;
     background-color: rgba(0, 0, 0,0.4);
-    z-index: 4;
+    z-index: 1;
     display: none;
 }
 .banner {
@@ -191,7 +189,7 @@ h2 {
     justify-content: center;
     align-items: center;
     height: 4vh;
-    color: #bee2e2; 
+    color: #bee2e2;
     font-size: medium;
     border: 0.1px solid;
     padding: 0.5vh 2vh;
@@ -201,7 +199,6 @@ h2 {
 }
 .loginbutton:hover{
     color: #bee2e2;
-    z-index: 1;
     cursor: pointer;
 }
 .banner .slider {
@@ -211,9 +208,7 @@ h2 {
     top: 20%;
     left: calc(50% - 100px);
     transform-style: preserve-3d;
-    transform: perspective(1000px);
     animation: autoRun 35s linear infinite;
-    z-index: 3;
 }
 @keyframes autoRun{
     from{
@@ -227,8 +222,8 @@ h2 {
     position: absolute;
     inset: 0 0 0 0;
     transform:
-        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * -1deg))
-        translateZ(550px);
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * -1deg))
+            translateZ(550px);
 }
 
 .banner .slider .item img {
@@ -243,4 +238,3 @@ h2 {
 .banner .slider:has(img:hover) {
     animation-play-state: paused;
 }
-

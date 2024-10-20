@@ -4,6 +4,9 @@
     color: #bee2e2;
     text-decoration: none;
     list-style-type: none;
+    font-family: century-gothic, sans-serif;
+    font-style: normal;
+    font-weight: 400;
 }
 body{
     background: linear-gradient(#0c2e3c,#01161e);
@@ -39,22 +42,22 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: flex-end;
 }
-.menuicons{ 
+.menuicons{
     position: absolute;
-    width: 40vw; 
+    width: 40vw;
     display: flex;
-    justify-content: flex-end; 
+    justify-content: flex-end;
     margin-right: 6%;
     transform: translateX(10%);
     opacity: 0;
     visibility: hidden;
     transition: transform .5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
-.show{ 
+.show{
     transform: translateX(0);
     opacity: 1;
     visibility: visible;
-} 
+}
 .hide {
     transform: translateX(100%);
     opacity: 0;
@@ -91,7 +94,7 @@ body::-webkit-scrollbar {
     display: flex;
     width: max-content;
     transition: 1s;
-    mask-image: linear-gradient(to top, rgba(255, 255, 255, 0.675) 0%, rgba(255, 255, 255, 0.818) 1%, rgb(255, 255, 255) 100%, rgba(0, 0, 0, 0) 100%); 
+    mask-image: linear-gradient(to top, rgba(255, 255, 255, 0.675) 0%, rgba(255, 255, 255, 0.818) 1%, rgb(255, 255, 255) 100%, rgba(0, 0, 0, 0) 100%);
 }
 .list img{
     width: 1536px;
@@ -99,7 +102,7 @@ body::-webkit-scrollbar {
     height: 100%;
     opacity: 0.8;
     object-fit: cover;
-    mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.675) 0%, rgba(255, 255, 255, 0.818) 5%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0) 100%); 
+    mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.675) 0%, rgba(255, 255, 255, 0.818) 5%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0) 100%);
     /* 0% top is transparent,25% of the top is given shadow,85% of image is clearly visible,100%image will be covered */
 }
 .buttons{
@@ -118,11 +121,11 @@ body::-webkit-scrollbar {
 @media screen and (max-width:770px) {
     .slider{
         height: 400px;
-    }  
+    }
     .about{
         font-size: small;
         width: 100px;
-        top: 0; 
+        top: 0;
     }
 }
 /* .maincontent .content{
@@ -186,7 +189,7 @@ body::-webkit-scrollbar {
 .content ul li:hover{
     z-index: 2;
     /* position: absolute; */
-    /* filter: drop-shadow(0rem 0.5rem 0.5rem #bee2e2);
+/* filter: drop-shadow(0rem 0.5rem 0.5rem #bee2e2);
 }  */
 
 .content{
@@ -199,8 +202,8 @@ body::-webkit-scrollbar {
     display: none;/* Hide scrollbar for Chrome and Safari*/
 }
 .genre{
-    position: relative; 
-    top: 4vh; 
+    position: relative;
+    top: 4vh;
     padding-left: 3vw;
 }
 .grid-container {
@@ -234,6 +237,11 @@ body::-webkit-scrollbar {
     border-top-right-radius: 3%;
     border-bottom-right-radius: 3%;
     transition: width 1s ease-in-out;
+}
+.animecontent{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 70%;
 }
 .aboutmenu{
     width: 3vh;
