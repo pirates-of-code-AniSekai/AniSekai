@@ -9,7 +9,8 @@
     font-weight: 400;
 }
 body{
-    background: linear-gradient(#0c2e3c,#01161e);
+    background-color: #0c303e;
+    /* background: linear-gradient(#0c2e3c,#01161e); */
 }
 body::-webkit-scrollbar {
     display: none;
@@ -82,7 +83,7 @@ body::-webkit-scrollbar {
 }
 .slider{
     max-width: 100vw;
-    height: 80vh;
+    height: 85vh;
     position: relative;
     overflow: hidden;
 }
@@ -94,7 +95,6 @@ body::-webkit-scrollbar {
     display: flex;
     width: max-content;
     transition: 1s;
-    mask-image: linear-gradient(to top, rgba(255, 255, 255, 0.675) 0%, rgba(255, 255, 255, 0.818) 1%, rgb(255, 255, 255) 100%, rgba(0, 0, 0, 0) 100%);
 }
 .list img{
     width: 1536px;
@@ -102,8 +102,7 @@ body::-webkit-scrollbar {
     height: 100%;
     opacity: 0.8;
     object-fit: cover;
-    mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.675) 0%, rgba(255, 255, 255, 0.818) 5%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0) 100%);
-    /* 0% top is transparent,25% of the top is given shadow,85% of image is clearly visible,100%image will be covered */
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.675) 0%, rgba(0, 0, 0, 0.818) 0%, rgb(0, 0, 0) 30%, rgba(0, 0, 0, 0) 100%);
 }
 .buttons{
     display: none;
@@ -114,18 +113,13 @@ body::-webkit-scrollbar {
 .about{
     font-size:x-large;
     width: 30vw;
-    position: absolute;
-    top: 40%;
+    position: relative;
+    bottom: 50%;
     left: 5%;
 }
 @media screen and (max-width:770px) {
     .slider{
         height: 400px;
-    }
-    .about{
-        font-size: small;
-        width: 100px;
-        top: 0;
     }
 }
 .content{
