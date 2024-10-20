@@ -9,7 +9,7 @@
     font-weight: 400;
 }
 body{
-    background-color: #0c303e;
+    background-color: #061e28;
     /* background: linear-gradient(#0c2e3c,#01161e); */
 }
 body::-webkit-scrollbar {
@@ -163,7 +163,8 @@ body::-webkit-scrollbar {
 .aboutanime{
     padding: 8%;
     width: 10vw;
-    background-color:#124559;
+    /* background-color:#124559; */
+    background-color: #123c4a;
     display: none;
     border-top-right-radius: 3%;
     border-bottom-right-radius: 3%;
@@ -172,20 +173,27 @@ body::-webkit-scrollbar {
 .animecontent{
     font-size: small;
     overflow:hidden;
-    text-overflow: ellipsis;
-    white-space:normal;
-    width: 90%;
-    height: 50%;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 .aboutanime h3{
-    height: 5vh;
+    height: 10%;
     overflow:hidden;
     text-overflow: ellipsis;
     white-space:nowrap;
 }
+.innerabout{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 34vh;
+    width: 23vh;
+}
 .aboutmenu{
     width: 2vh;
-    height: 2vh;
+    height: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
