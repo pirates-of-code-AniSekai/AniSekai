@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: #bee2e2;
+    list-style-type: none;
+    font-family: century-gothic, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+body{
+    background-color: rgba(0, 0, 0,0.9);
+    height: 100%;
+}
+.bg-cover{
+    height: 90vh;
+    width: 100vw;
+    opacity: 0.6;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.675) 0%, rgba(0, 0, 0, 0.818) 0%, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.content{
+    position: absolute;
+    height: 50vh;
+    width: 50vw;
+    bottom: 20vh;
+    left: 25vw;
+    display: flex;
+}
+.poster{
+    height: 100%;
+    border-radius: 1vh;
+}
+.about{
+    padding: 5%;
+    font-size: larger;
+}
+.about h1{
+    height: 8vh;
+}
+.main-2{
+    height: 60vh;
+    width: 50vw;
+    margin: 1% 25%;
+}
+.drop-down{
+    display: flex;
+    justify-content: space-between;
+}
+.drop-down select{
+    background-color: transparent;
+    width: 15vw;
+    height: 5vh;
+    border-radius: 5%;
+}
+.drop-down select>option{
+    background-color: rgba(0, 0, 0,0.9);
+}
+.drop-down input{
+    background-color: transparent;
+    border: 1px solid rgb(114, 114, 114);
+    padding: 1%;
+    border-radius: 5%;
+    height: 5vh;
+    width: 15vw;
+}
+.episodes{
+    height:90%;
+    width: 100%;
+    margin: 2vh 0;
+    overflow-y: scroll;
+}
+.episode{
+    height: 10vh;
+    background-color: rgba(66, 66, 66, 0.123);
+    margin-bottom: 1vh;
+    border-radius: 1vh;
+    display: flex;
+    align-items: center;
+    padding-left: 2vw;
+    font-size: larger;
+    transform: scaleX(1);
+    transition: transform 0.1s ease;
+}
+.episode:hover{
+    transform: scaleX(0.98);
+}
+.episode img{
+    height: 4vh;
+    padding-right: 2vw;
+}
+.recommendations{
+    width: 90vw;
+    margin: 10vh ;
+}
+.recommendations ul{
+    height: 70vh;
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+.recommendations ul li{
+    margin: 1vh;
+}
+.recommendations ul li img{
+    width: 20vw;
+    height: 50vh;
+    border-radius: 5%;
+    transform: scale(1);
+    transition: transform 0.1s ease;
+}
+.recommendations ul li img:hover{
+    transform: scale(0.98);
+}
