@@ -8,19 +8,17 @@
     font-weight: 400;
 }
 .login{
-    position: absolute;
     display: none;
+    width: 30vw; 
+    height: 70vh;
+    position: absolute;
     top: 13vh;
     left: 35vw;
-    width: 30vw;
-    height: 70vh;
 }
 .loginbox {
     position: absolute;
     z-index: 2;
-    /* top: 13vh;
-    left: 35vw; */
-    width: 30vw;
+    width: 30vw; 
     height: 70vh;
     background-color: rgba(26, 94, 121, 0.7);
     backdrop-filter: blur(10px);
@@ -34,7 +32,7 @@
 }
 .login .loginbox.open {
     opacity: 1;
-}
+  }
 h2 {
     font-size: 2rem;
     text-align: center;
@@ -194,7 +192,7 @@ h2 {
     justify-content: center;
     align-items: center;
     height: 4vh;
-    color: #bee2e2;
+    color: #bee2e2; 
     font-size: medium;
     border: 0.1px solid;
     padding: 0.5vh 2vh;
@@ -227,8 +225,8 @@ h2 {
     position: absolute;
     inset: 0 0 0 0;
     transform:
-            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * -1deg))
-            translateZ(550px);
+        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * -1deg))
+        translateZ(550px);
 }
 
 .banner .slider .item img {
@@ -243,3 +241,4 @@ h2 {
 .banner .slider:has(img:hover) {
     animation-play-state: paused;
 }
+
