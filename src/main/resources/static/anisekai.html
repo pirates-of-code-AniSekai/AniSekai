@@ -11,18 +11,18 @@
 
 <body>
 <div class="login">
-    <form action="#" id="myForm" style="height: 100%; width: 100%;">
+    <form action="/login" method="post" id="myForm" style="height: 100%; width: 100%;">
         <div class="loginbox">
             <h2>ESCAPE THE REALITY</h2>
             <div class="input-box">
                 <i class='bx bxs-envelope'></i>
-                <input type="email" id="email" required>
+                <input type="text" name="username"  id="email" required>
                 <label>Email</label>
                 <div class="input-line"></div>
             </div>
             <div class="input-box">
                 <i class='bx bxs-lock'></i>
-                <input type="password" id="password" required>
+                <input type="password" name="password" id="password" required>
                 <label>Password</label>
                 <div class="input-line"></div>
             </div>

@@ -14,14 +14,3 @@ openLogin.addEventListener('click', () => {
     cover.style.display = 'none';
   }
 });
-document.getElementById('myForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent the default form submission
-
-  // Get input values
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-
-  // Log the input values
-  console.log('Email:', email);
-  console.log('Password:', password);
-});
