@@ -12,7 +12,7 @@ async function getTrending() {
             let childHtml = `<img src=${data.image}>
                         <div class="aboutanime">
                         <div class="innerabout">
-                                <h4 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english}</h4>
+                                <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english}</h3>
                                 <p class="animecontent" style="font-size:1.7vh;text-align:justify;">${data.description}</p>
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
@@ -48,8 +48,8 @@ async function getPopular() {
             let childHtml = `<img src=${data.image}>
                         <div class="aboutanime">
                         <div class="innerabout">
-                                <h4 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english}</h4>
-                                <p class="animecontent" style="font-size:1.7vh;text-align:justify;">${data.description}</p>
+                                <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english}</h3>
+                                <p class="animecontent" style="font-size:1.7vh;text-align:justify; ">${data.description}</p>
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
                                     <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
@@ -85,8 +85,8 @@ async function getSpecial() {
             let childHtml = `<img src=${data.image}>
                         <div class="aboutanime">
                         <div class="innerabout">
-                                <h4 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english}</h4>
-                                <p class="animecontent" style="font-size:1.7vh;text-align:justify;">${data.description}</p>
+                                <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english}</h3>
+                                <p class="animecontent" style="font-size:1.7vh;text-align:justify; ">${data.description}</p>
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
                                     <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
@@ -119,8 +119,8 @@ async function getMovies() {
             let childHtml = `<img src=${data.image}>
                         <div class="aboutanime">
                         <div class="innerabout">
-                                <h4 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english}</h4>
-                                <p class="animecontent" style="font-size:1.7vh;text-align:justify;">${data.description}</p>
+                                <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english}</h3>
+                                <p class="animecontent" style="font-size:1.7vh;text-align:justify; ">${data.description}</p>
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
                                     <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>

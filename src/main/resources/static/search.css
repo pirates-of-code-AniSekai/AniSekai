@@ -1,9 +1,9 @@
 body{
     background-color: #0c303e;
     padding:0vh 3vh 0vh 1vh;
-    font-family: century-gothic, sans-serif;
-    font-style: normal;
-    font-weight: 400;
+    font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .search-bar{
@@ -43,10 +43,17 @@ body{
     margin-top: 1.5vh;
     margin-right: 1vh;
     border-radius: 3%;
-
 }
 
-
+.search-res-box img{
+    height: 100%;
+    width: 100%;
+    border-radius: 3%;
+    transition: transform 0.1s ease;
+}
+.search-res-box:hover{
+    transform: scale(0.98);
+}
 #input{
     height: 3rem;
     width: 40rem;
