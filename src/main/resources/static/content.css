@@ -84,10 +84,8 @@ body{
 }
 .main-2{
     max-height: 60vh;
-    width: 50vw;
-    margin: 1% 25%;
-    overflow-y: scroll;
-    scrollbar-color: #bee2e2 transparent;
+    width: 70vw;
+    margin: 1% 15% 10% 15%;
 }
 .drop-down{
     display: flex;
@@ -99,16 +97,19 @@ body{
     border: 2px solid rgb(114, 114, 114);
     padding: 1%;
     border-radius: 5%;
-    height: 5vh;
-    width: 15vw;
+    height: 8vh;
+    width: 20vw;
+    margin-right: 1.5%;
 }
 .episodes{
-    height:90%;
-    width: 100%;
+    max-height: 60vh;
+    width: 70vw;
     margin: 2vh 0;
+    overflow-y: scroll;
+    scrollbar-color: #bee2e2 transparent;
 }
 .episode{
-    height: 10vh;
+    height: 11vh;
     background-color: rgba(66, 66, 66, 0.123);
     margin-bottom: 1vh;
     border-radius: 1vh;
