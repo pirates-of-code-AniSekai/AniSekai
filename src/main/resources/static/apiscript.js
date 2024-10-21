@@ -11,14 +11,16 @@ async function getTrending() {
         json.results.map(data => {
             let childHtml = `<img src=${data.image}>
                         <div class="aboutanime">
-                            <h3 style="font-weight:bolder">${data.title.english}</h3>
-                            <p class="animecontent" style="text-align:justify;">${data.description}</p>
-                            <div class="aboutMenu"
-                                 style="display: flex; justify-content: space-evenly; height:20%;">
-                                <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
-                                <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
-                                <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
-                                <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
+                        <div class="innerabout">
+                                <h4 style="font-weight:bolder">${data.title.english}</h4>
+                                <p class="animecontent" style="font-size:small;text-align:justify;">${data.description}</p>
+                                <div class="aboutMenu"
+                                    style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
+                                    <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
+                                    <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
+                                    <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
+                                    <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
+                                </div>
                             </div>
                         </div>
                         `;
@@ -45,14 +47,16 @@ async function getPopular() {
         json.results.map(data => {
             let childHtml = `<img src=${data.image}>
                         <div class="aboutanime">
-                            <h3 style="font-weight:bolder">${data.title.english}</h3>
-                            <p class="animecontent" style="text-align:justify;">${data.description}</p>
-                            <div class="aboutMenu"
-                                 style="display: flex; justify-content: space-evenly; height:20%;">
-                                <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
-                                <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
-                                <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
-                                <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
+                        <div class="innerabout">
+                                <h4 style="font-weight:bolder">${data.title.english}</h4>
+                                <p class="animecontent" style="font-size:small;text-align:justify;">${data.description}</p>
+                                <div class="aboutMenu"
+                                    style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
+                                    <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
+                                    <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
+                                    <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
+                                    <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
+                                </div>
                             </div>
                         </div>
                         `;
@@ -80,14 +84,16 @@ async function getSpecial() {
         json.results.map(data => {
             let childHtml = `<img src=${data.image}>
                         <div class="aboutanime">
-                            <h3 style="font-weight:bolder">${data.title.english}</h3>
-                            <p class="animecontent" style="text-align:justify;">${data.description}</p>
-                            <div class="aboutMenu"
-                                 style="display: flex; justify-content: space-evenly; height:20%;">
-                                <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
-                                <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
-                                <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
-                                <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
+                        <div class="innerabout">
+                                <h4 style="font-weight:bolder">${data.title.english}</h4>
+                                <p class="animecontent" style="font-size:small;text-align:justify;">${data.description}</p>
+                                <div class="aboutMenu"
+                                    style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
+                                    <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
+                                    <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
+                                    <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
+                                    <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
+                                </div>
                             </div>
                         </div>
                         `;
@@ -112,14 +118,16 @@ async function getMovies() {
         json.results.map(data => {
             let childHtml = `<img src=${data.image}>
                         <div class="aboutanime">
-                            <h3 style="font-weight:bolder">${data.title.english}</h3>
-                            <p class="animecontent" style="text-align:justify;">${data.description}</p>
-                            <div class="aboutMenu"
-                                 style="display: flex; justify-content: space-evenly; height:20%;">
-                                <div class="aboutmenu"><img title="LIKE" src="Icons/heart.png"></div>
-                                <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
-                                <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
-                                <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
+                        <div class="innerabout">
+                                <h4 style="font-weight:bolder">${data.title.english}</h4>
+                                <p class="animecontent" style="font-size:small;text-align:justify;">${data.description}</p>
+                                <div class="aboutMenu"
+                                    style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
+                                    <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
+                                    <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
+                                    <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
+                                    <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
+                                </div>
                             </div>
                         </div>
                         `;
