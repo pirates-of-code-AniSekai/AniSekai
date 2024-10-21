@@ -171,18 +171,13 @@ body::-webkit-scrollbar {
     transition: width 1s ease-in-out;
 }
 .animecontent{
-    font-size: small;
+    font-size: smaller;
     overflow:hidden;
     width: 95%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-}
-.aboutanime h3{
-    height: 10%;
-    overflow:hidden;
-    text-overflow: ellipsis;
-    white-space:nowrap;
+    color: #a0c1c1;
 }
 .innerabout{
     display: flex;
