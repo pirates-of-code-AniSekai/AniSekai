@@ -10,7 +10,6 @@
 }
 body{
     background-color: #061e28;
-    /* background: linear-gradient(#0c2e3c,#01161e); */
 }
 body::-webkit-scrollbar {
     display: none;
@@ -18,7 +17,7 @@ body::-webkit-scrollbar {
 .nav{
     display: flex;
     position: fixed;
-    height: 6vh;
+    height: 7vh;
     width: 100vw;
     z-index: 100;
     background-color: transparent;
@@ -29,23 +28,21 @@ body::-webkit-scrollbar {
 }
 .AniSekai{
     width: 60vw;
+    display: flex;
+    align-items: center;
 }
 .Anisekaiimg{
     height: 10vh;
-    position: relative;
-    bottom: 2vh;
-    right: 1.5vw;
 }
 .menu{
     width: 40vw;
     position: relative;
-    height: 5vh;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 .menuicons{
     position: absolute;
-    width: 40vw;
     display: flex;
     justify-content: flex-end;
     margin-right: 6%;
@@ -67,8 +64,39 @@ body::-webkit-scrollbar {
 .openmenu{
     display: flex;
     align-items: center;
-    padding-top: 1vh;
     padding-right: 1vh;
+    height: 6vh;
+    width: 1.2vw;
+    position: relative;
+}
+.openmenu span{
+    height: 6%;
+    width: 100%;
+    background-color: #bee2e2;
+    border-radius: 25px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    transition: .3s ease;
+}
+.openmenu span:nth-child(1){
+    top: 25%;
+}
+.openmenu span:nth-child(2){
+    top: 50%;
+}
+.openmenu span:nth-child(3){
+    top: 75%;
+}
+.openmenu.show span:nth-child(1){
+    top: 50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+.openmenu.show span:nth-child(2){
+    opacity: 0;
+}
+.openmenu.show span:nth-child(3){
+    top: 50%;
+    transform: translate(-50%,50%) rotate(-45deg);
 }
 .openmenu:hover{
     cursor: pointer;
