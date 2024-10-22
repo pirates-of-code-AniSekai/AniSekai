@@ -6,6 +6,7 @@
     font-family: "Lexend", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  text-decoration: none;
 }
 .login{
     position: absolute;
@@ -193,18 +194,23 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 4vh;
+    height: 6vh;
     color: #bee2e2;
-    font-size: medium;
+    font-size: large;
     border: 0.1px solid;
     padding: 0.5vh 2vh;
     margin-top: 1.5vh;
     margin-right: 1vh;
-    border-radius: 20%;
+    border-radius: 1vh;
+    background-color: transparent;
+    transform: scaleX(1);
+    transition: transform 0.3s ease,background-color 0.3s ease;
 }
 .loginbutton:hover{
-    color: #bee2e2;
     cursor: pointer;
+    background-color: #bee2e2;
+    color: black;
+    transform: scaleX(1.05);
 }
 .banner .slider {
     position: absolute;
