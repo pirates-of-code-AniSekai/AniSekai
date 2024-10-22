@@ -9,6 +9,7 @@ const desc = document.querySelector(".description");
 const episodeList = document.querySelector(".episodes");
 const recList = document.querySelector(".recList");
 const yearDiv = document.querySelector(".year");
+const playBtn = document.querySelector("#playBtn");
 
 const loadData = async () => {
     const response = await fetch(`${baseUrl}/${anime_id}`);
@@ -30,6 +31,10 @@ const loadData = async () => {
             window.location.href = "player.html";
         })
         episodeList.appendChild(child);
+    })
+    playBtn.addEventListener("click",() => {
+        localStorage.setItem("episode_id",json.episodes[0].id);
+        window.location.href = "player.html";
     })
 
 
