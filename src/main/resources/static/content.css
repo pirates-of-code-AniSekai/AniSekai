@@ -64,13 +64,6 @@ body{
     text-align: justify;
     font-size: 88%;
 }
-.genre-span{
-    border: 1px solid; 
-    border-radius: 35%;
-    font-size: small;
-    padding: 0.5vh;
-    background-color: rgba(190, 226, 226,0.25);
-}
 .about button{
     font-size: large;
     margin-right: 1%;
