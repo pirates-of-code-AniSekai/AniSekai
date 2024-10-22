@@ -29,7 +29,8 @@ const loadData = async () => {
     json.episodes.map((ep) => {
         let child = document.createElement("div");
         child.classList.add("episode");
-        child.innerHTML = `<img src="Icons/play-button.png">${ep.title}`;
+        let title = ep.title.replace("EP", "Episode");
+        child.innerHTML = `<img src="Icons/play-button.png">${title}`;
         child.addEventListener("click",() => {
             localStorage.setItem("episode_id",ep.id);
             window.location.href = "player.html";
