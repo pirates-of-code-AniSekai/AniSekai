@@ -22,6 +22,10 @@ const loadData = async () => {
     desc.innerHTML = json.description;
     yearDiv.innerHTML = json.releaseDate;
 
+    if(json.type === "MOVIE") {
+        document.querySelector(".main-2").style.display = "none";
+    }
+
     json.episodes.map((ep) => {
         let child = document.createElement("div");
         child.classList.add("episode");
