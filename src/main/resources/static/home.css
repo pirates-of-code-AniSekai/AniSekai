@@ -111,7 +111,7 @@ body::-webkit-scrollbar {
 }
 .slider{
     max-width: 100vw;
-    height: 85vh;
+    height: 80vh;
     position: relative;
     overflow: hidden;
 }
@@ -125,8 +125,7 @@ body::-webkit-scrollbar {
     transition: 1s;
 }
 .list img{
-    width: 1536px;
-    max-width: 100vw;
+    width: 100vw;
     height: 100%;
     opacity: 0.8;
     object-fit: cover;
@@ -139,10 +138,13 @@ body::-webkit-scrollbar {
     border: none;
 }
 .about{
-    font-size:x-large;
+    font-size:large;
     width: 30vw;
+    height: 20vh;
+    overflow: hidden;
+    /* text-align: justify; */
     position: relative;
-    bottom: 50%;
+    bottom: 55%;
     left: 5%;
 }
 @media screen and (max-width:770px) {
