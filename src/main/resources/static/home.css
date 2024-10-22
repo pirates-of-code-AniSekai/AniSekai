@@ -150,14 +150,39 @@ body::-webkit-scrollbar {
         height: 400px;
     }
 }
+.maincontent{
+    margin-bottom: 25vh;
+}
 .maincontent li{
     height: 50vh;
 }
 .content{
+    position: relative;
     margin: 1vw 2vw;
     padding: 4vh 4vh 20vh 4vh;
     overflow: scroll;
     scrollbar-width: none;/* Hide scrollbar for Firefox */
+}
+.left,.right{
+    font-weight: bold;
+    height: 34vh;
+    width: 3vw;
+    line-height: 5vh;
+    font-size: xx-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(190, 226, 226,0.6);
+    color: #123c4a;
+    top: 4vh;
+    z-index: 5;
+}
+.left{
+    position: absolute;
+}
+.right{
+    position: absolute;
+    right: 0px;
 }
 .content::-webkit-scrollbar {
     display: none;/* Hide scrollbar for Chrome and Safari*/
@@ -177,11 +202,9 @@ body::-webkit-scrollbar {
     width: 23vh;
     display: flex;
     z-index: 1;
-    overflow: visible;
     transition: filter 0.4s ease-in-out;
     transition: transform 0.6s ease-in-out;
 }
-
 .grid-container li img{
     height: 100%;
     width: 23vh;
@@ -191,7 +214,6 @@ body::-webkit-scrollbar {
 .aboutanime{
     padding: 8%;
     width: 30vw;
-    /* background-color:#124559; */
     background-color: #123c4a;
     display: none;
     border-top-right-radius: 3%;
@@ -244,17 +266,6 @@ body::-webkit-scrollbar {
     filter: drop-shadow(0rem 0.2rem 0.2rem #bee2e2);
 }
 .footer{
-    color: #bee2e2;
-    height: 50vh;
-    background: linear-gradient(#124559,#01161e);
-}
-.footer2{
-    display: flex;
-    list-style-type: none;
-    justify-content: space-around;
-    align-items: center;
-    font-size: larger;
-}
-.footer2 li{
-    margin-bottom: 4vh;
+    height: 5vh;
+    background-color: #0c2e3c;
 }
