@@ -44,6 +44,14 @@ const loadData = async () => {
             })
         recList.appendChild(child);
     })
+
+    console.log(document.getElementById("genre1"));
+
+
+    for(let i=1;i<=3;i++) {
+        if(json.genres.length < i) break;
+        document.querySelector(`#genre${i}`).innerHTML = json.genres[i - 1];
+    }
 }
 
 
