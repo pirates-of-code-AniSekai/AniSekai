@@ -10,7 +10,7 @@ async function loadVideo() {
     const json = await response.json();
     console.log(json);
     
-    let source720p = json.sources.find(source => source.quality === "720p");
+    let source720p = json.sources.find(source => source.quality === "1080p");
     hls.loadSource(source720p.url);
     hls.attachMedia(video);
 }
