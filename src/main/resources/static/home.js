@@ -12,6 +12,7 @@ const openmenu = document.querySelector('.openmenu');
 
 openmenu.addEventListener("click", (event) => {
   menuicons.classList.toggle('show');
+  openmenu.classList.toggle('show');
 });
 
 let list=document.querySelector('.slider .list');
@@ -55,3 +56,27 @@ dots.forEach((button,key)=>{
     reloadSlider();
   })
 });
+
+// const listslider=document.querySelector(".gridcontainer");
+// var scrollPerClick=400;
+// var scrollAmount=0;
+// function scrollLeft(){
+//   listslider.scrollTo({
+//     top:0,
+//     left:(scrollAmount=scrollAmount-scrollPerClick),
+//     behavior:"smooth",
+//   });
+//   if(scrollAmount<0){
+//     scrollAmount=0;
+//   }
+// }
+// function scrollRight(){
+//   if(scrollAmount<=listslider.scrollWidth-listslider.clientWidth){
+//     listslider.scrollTo({
+//       top:0,
+//       left:(scrollAmount=scrollAmount+scrollPerClick),
+//       behavior:"smooth",
+//     });
+//   }
+  
+// }
