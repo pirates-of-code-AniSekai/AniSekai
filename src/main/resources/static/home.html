@@ -18,20 +18,25 @@
     <div class="menu">
         <div class="menuicons">
             <ul>
-                <li><a href="#"><img title="MANGA" class="menuicon" style="height: 4vh;" src="Icons/manga.png">
+                <li><a href="#"><img title="MANGA" class="menuicon" style="height: 4.5vh;" src="Icons/manga.png">
                 </a></li>
-                <li><a href="#"><img title="SPECIALS" class="menuicon" style="height: 4vh;" src="Icons/glitter.png">
+                <li><a href="#"><img title="SPECIALS" class="menuicon" style="height: 4.5vh;" src="Icons/glitter.png">
                 </a></li>
-                <li><a href="search.html"><img title="SEARCH" class="menuicon" style="height: 4vh;" src="Icons/search.png">
+                <li><a href="search.html"><img title="SEARCH" class="menuicon" style="height: 4.5vh;" src="Icons/search.png">
                 </a></li>
-                <li><a href="#"><img title="NOTIFICATIONS" class="menuicon" style="height: 4vh;"
+                <li><a href="#"><img title="NOTIFICATIONS" class="menuicon" style="height: 4.5vh;"
                                      src="Icons/notification.png">
                 </a></li>
-                <li><a href="#"><img title="PROFILE" class="menuicon" style="height: 4vh;" src="Icons/profile.png">
+                <li><a href="#"><img title="PROFILE" class="menuicon" style="height: 4.5vh;" src="Icons/profile.png">
                 </a></li>
             </ul>
         </div>
-        <div class="openmenu"><img style="height: 4vh;" src="Icons/menu.png"></div>
+        <!-- <div class="openmenu"><img style="" src="Icons/menu.png"></div> -->
+        <div class="openmenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
 </div>
 <div class="mainslider">
@@ -105,6 +110,8 @@
                 <ul class="grid-container trendingList" type="none">
                     
                 </ul>
+                <a class="left slidebtn"><</a>
+                <a class="right slidebtn">></a>
             </div>
         </li>
         <li>
@@ -113,6 +120,8 @@
                 <ul class="grid-container popularList" type="none">
                     
                 </ul>
+                <a class="left slidebtn"><</a>
+                <a class="right slidebtn">></a>
             </div>
         </li>
         <li>
@@ -121,6 +130,8 @@
                 <ul class="grid-container specialList" type="none">
                    
                 </ul>
+                <a class="left slidebtn"><</a>
+                <a class="right slidebtn">></a>
             </div>
         </li>
         <li>
@@ -129,60 +140,14 @@
                 <ul class="grid-container movieList" type="none">
               
                 </ul>
-            </div>
-        </li>
-        <li>
-            <h1 class="genre">Romance</h1>
-            <div class="content">
-                <ul class="grid-container romanceList" type="none">
-              
-                </ul>
-            </div>
-        </li>
-        <li>
-            <h1 class="genre">Action</h1>
-            <div class="content">
-                <ul class="grid-container actionList" type="none">
-              
-                </ul>
-            </div>
-        </li>
-        <li>
-            <h1 class="genre">Comedy</h1>
-            <div class="content">
-                <ul class="grid-container comedyList" type="none">
-              
-                </ul>
+                <a class="left slidebtn" onclick="scrollLeft()"><</a>
+                <a class="right slidebtn" onclick="scrollRight()">></a>
             </div>
         </li>
     </ul>
 </div>
 <div class="footer">
-    <center>CREDITS</center>
-    <ul style="margin-top: 5vh;">
-        <li>
-            <ul class="footer2">
-                <li>Prabhleen Kaur</li>
-                <li>2310990851</li>
-                <li>prabhleen0851.be23@chitkara.edu.in</li>
-            </ul>
-            <ul class="footer2">
-                <li>Pranjan Gupta</li>
-                <li>2310990854</li>
-                <li>pranjan0854.be23@chitkara.edu.in</li>
-            </ul>
-            <ul class="footer2">
-                <li>Rehan Chalana</li>
-                <li>2310990864</li>
-                <li>rehan0864.be23@chitkara.edu.in</li>
-            </ul>
-            <ul class="footer2">
-                <li>Madhav Sharma</li>
-                <li>2310991335</li>
-                <li>madhav1335.be23@chitkara.edu.in</li>
-            </ul>
-        </li>
-    </ul>
+
 </div>
 <script src="home.js"></script>
 <script src="apiscript.js"></script>

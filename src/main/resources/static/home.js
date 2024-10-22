@@ -12,6 +12,7 @@ const openmenu = document.querySelector('.openmenu');
 
 openmenu.addEventListener("click", (event) => {
   menuicons.classList.toggle('show');
+  openmenu.classList.toggle('show');
 });
 
 let list=document.querySelector('.slider .list');
