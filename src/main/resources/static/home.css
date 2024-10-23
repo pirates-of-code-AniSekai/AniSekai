@@ -121,6 +121,7 @@ body::-webkit-scrollbar {
     overflow: hidden;
     border-radius: 2vh;
     opacity: 0;
+    transition: opacity 0.25s ease-in-out;
 }
 .profile-bar.open{
     opacity: 1;
