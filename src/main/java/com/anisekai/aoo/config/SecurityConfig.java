@@ -20,12 +20,6 @@ public class SecurityConfig {
     @Bean
     UserDetailsManager users(DataSource dataSource) {
         JdbcUserDetailsManager users = new JdbcUserDetailsManager(dataSource);
-        UserDetails user = User.withDefaultPasswordEncoder()
-                               .username("rehanchalanaprsnl@gmail.com")
-                               .password("rehanpass")
-                               .roles("USER")
-                               .build();
-        users.createUser(user);
         return users;
     }
 
@@ -46,6 +40,11 @@ public class SecurityConfig {
                         .loginProcessingUrl("/login")
                         .defaultSuccessUrl("/home.html")
                         .defaultSuccessUrl("/home",true)
+
+                ).logout(out -> out
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/anisekai.html")
+                        .permitAll()
                 )
 //               .formLogin(Customizer.withDefaults())
                 .csrf((csrf) -> csrf.disable());
