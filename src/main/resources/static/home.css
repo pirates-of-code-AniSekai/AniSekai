@@ -192,14 +192,37 @@ body::-webkit-scrollbar {
     border: none;
 }
 .about{
-    font-size:large;
-    width: 30vw;
-    height: 20vh;
+    font-size:xx-large;
+    width: 50vw;
+    height: 40vh;
     overflow: hidden;
-    /* text-align: justify; */
     position: relative;
-    bottom: 55%;
+    bottom: 45%;
     left: 5%;
+}
+.about span{
+    margin-right: 1vh;
+    color: rgba(190, 226, 226,0.75);
+    font-size: large;
+}
+.about button{
+    font-size: large;
+    margin-right: 1%;
+    margin-top: 2.5vh;
+    height: 6vh;
+    width: 10vw;
+    border-radius: 1vh;
+    border: 1px solid;
+    background-color: transparent; 
+    backdrop-filter: blur(10px);
+    transform: scaleX(1);
+    transition: transform 0.3s ease,background-color 0.3s ease;
+}
+.about button:hover{
+    cursor: pointer;
+    background-color: #bee2e2;
+    color: black;
+    transform: scaleX(1.05);
 }
 @media screen and (max-width:770px) {
     .slider{
