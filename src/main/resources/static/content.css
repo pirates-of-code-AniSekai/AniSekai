@@ -27,7 +27,7 @@ body{
 .content{
     position: absolute;
     height: 60vh;
-    width: 65vw;
+    width: 70vw;
     bottom: 5vh;
     left: 15vw;
     display: flex;
@@ -41,7 +41,7 @@ body{
     font-size: larger;
     height: 60vh;
     width: 100%;
-    overflow: hidden;
+    overflow:visible;
 }
 .details{
     margin-bottom: 3%;
@@ -51,6 +51,7 @@ body{
     color: rgba(190, 226, 226,0.75);
 }
 .details h1{
+    width: 40vh;
     margin-bottom: 2.5%;
 }
 .description{
@@ -64,7 +65,7 @@ body{
     text-align: justify;
     font-size: 88%;
 }
-.about button{
+.about div button{
     font-size: large;
     margin-right: 1%;
     height: 6vh;
@@ -75,6 +76,8 @@ body{
     backdrop-filter: blur(10px);
     transform: scaleX(1);
     transition: transform 0.3s ease,background-color 0.3s ease;
+    
+   
 }
 .about button:hover{
     cursor: pointer;
@@ -82,15 +85,33 @@ body{
     color: black;
     transform: scaleX(1.05);
 }
+.buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    
+    padding: auto auto;
+
+}
+#watchlist{
+    padding-top: 0.1vh;
+    padding-bottom: 0.5vh;
+}
+
 .main-2{
     max-height: 60vh;
     width: 70vw;
     margin: 1% 15% 10% 15%;
+
 }
 .drop-down{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 2%;
+    /* margin-left: -5rem; */
 }
 .drop-down input{
     background-color: transparent;
@@ -104,7 +125,6 @@ body{
 .episodes{
     max-height: 60vh;
     width: 70vw;
-    margin: 2vh 0;
     overflow-y: scroll;
     scrollbar-color: #bee2e2 transparent;
 }
@@ -129,7 +149,7 @@ body{
 }
 .recommendations{
     width: 90vw;
-    margin: 10vh ;
+    margin: 3rem;
 }
 .recommendations ul{
     height: 70vh;
@@ -141,7 +161,7 @@ body{
     margin: 1vh;
 }
 .recommendations ul li img{
-    width: 15vw;
+    width: 15rem;
     height: 50vh;
     border-radius: 5%;
     transform: scale(1);
@@ -150,3 +170,46 @@ body{
 .recommendations ul li img:hover{
     transform: scale(0.98);
 }
+
+@media(max-width:1300px){
+    #watchlist{
+        width: 20vw;
+    }
+}
+@media(max-width: 835px){
+    .buttons{
+        width: 30vw;
+    }
+    #playBtn{
+        width: 12vw;
+        margin-right: 1vh;
+    }
+    #watchlist{
+        width: 15vw;
+        height: 7vh;
+    }
+    .recommendations{
+        margin-top: 7rem;
+    }
+
+}
+@media(max-width: 695px){
+    .description{
+        font-size: medium;
+        flex-wrap: wrap;
+    }
+    .buttons{
+        width: 35vw;
+    }
+    #playBtn{
+        height: 7vh;
+        width: 20vw;
+        margin-right: 1vh;
+        padding: 0.1vh;
+    }
+    #watchlist{
+        width: 25vw;
+        height: 7vh;
+        
+    }
+    }

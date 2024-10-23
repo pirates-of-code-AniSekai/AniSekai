@@ -32,7 +32,9 @@ body::-webkit-scrollbar {
     align-items: center;
 }
 .Anisekaiimg{
+    position: relative;
     height: 10vh;
+    left: -4vh;
 }
 .menu{
     width: 40vw;
@@ -45,12 +47,13 @@ body::-webkit-scrollbar {
     position: absolute;
     display: flex;
     justify-content: flex-end;
-    margin-right: 6%;
+    margin-right: 2rem;
     transform: translateX(10%);
     opacity: 0;
     visibility: hidden;
     transition: transform .5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
+
 .show{
     transform: translateX(0);
     opacity: 1;
@@ -66,8 +69,10 @@ body::-webkit-scrollbar {
     align-items: center;
     padding-right: 1vh;
     height: 6vh;
-    width: 1.2vw;
+    width: 1.5vw;
     position: relative;
+    margin-top: 0.7rem;
+    margin-bottom: 0.5rem;
 }
 .openmenu span{
     height: 6%;
@@ -82,10 +87,10 @@ body::-webkit-scrollbar {
     top: 25%;
 }
 .openmenu span:nth-child(2){
-    top: 50%;
+    top: 45%;
 }
 .openmenu span:nth-child(3){
-    top: 75%;
+    top: 65%;
 }
 .openmenu.show span:nth-child(1){
     top: 50%;
@@ -109,6 +114,8 @@ body::-webkit-scrollbar {
 .menuicons ul li{
     width: 4vw;
 }
+
+
 .slider{
     max-width: 100vw;
     height: 80vh;
@@ -139,7 +146,7 @@ body::-webkit-scrollbar {
 }
 .about{
     font-size:large;
-    width: 30vw;
+    width: 45vw;
     height: 20vh;
     overflow: hidden;
     /* text-align: justify; */
@@ -160,7 +167,9 @@ body::-webkit-scrollbar {
 }
 .content{
     position: relative;
-    margin: 1vw 2vw;
+    /* margin: 1vw 2vw; */
+    margin-top: 0.5rem;
+    margin-left: -0.5rem;
     padding: 4vh 4vh 20vh 4vh;
     overflow: scroll;
     scrollbar-width: none;/* Hide scrollbar for Firefox */
@@ -189,15 +198,17 @@ body::-webkit-scrollbar {
 .content::-webkit-scrollbar {
     display: none;/* Hide scrollbar for Chrome and Safari*/
 }
+
 .genre{
     position: relative;
     top: 4vh;
-    padding-left: 4vw;
+    padding-left: 1.7rem;
     font-weight: bolder;
 }
 .grid-container {
     display: flex;
     gap: 2vh;
+    
 }
 .grid-container li {
     height: 34vh;
@@ -270,4 +281,68 @@ body::-webkit-scrollbar {
 .footer{
     height: 5vh;
     background-color: #0c2e3c;
+}
+
+@media(max-width:1250px){
+    .menuicons ul li{
+        margin-right: 2.2vh;
+    }
+    .openmenu{
+        height: 7vh;
+        width: 3vw;
+    }
+    .menuicons{
+        margin-right: 3rem;
+    }
+}
+
+@media(max-width:900px){
+    .menuicons ul li{
+        margin-right: 3.5vh;
+    }
+    .openmenu{
+        height: 7vh;
+        width: 3vw;
+    }
+}
+@media(max-width:570px){
+    .menuicons ul li{
+        margin-right: 3vh;
+    }
+    .openmenu{
+        height: 7vh;
+        width: 3vw;
+    }
+}
+@media(max-width:450px){
+    .menuicons{
+        margin-right: 2.5rem;
+    }
+    .menuicons ul li{
+        margin-right:2.5rem;
+    }
+    .openmenu{
+        height: 7vh;
+        width: 4vw;
+    }
+    
+    
+}
+@media(max-width:400px){
+    .menuicons{
+        margin-right: 2rem;
+    }
+    .menuicons ul li{
+        margin-right:2rem;
+    }
+    .openmenu{
+        height: 7vh;
+        width: 4vw;
+    }
+    .content{
+        margin-left: -5rem;
+    }
+    .grid-container{
+        margin-left: 5rem;
+    }
 }
