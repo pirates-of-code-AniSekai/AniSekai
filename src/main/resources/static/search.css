@@ -28,18 +28,17 @@ body{
 }
 .searchBtn{
     transform: translateX(-100%);
-    background-color: transparent;
-    height: 50%;
-    width: 5%;
+    height: 3.2rem;
     position: relative;
     right: 1vw;
     color: #bee2e2;
-    border: 1px solid;
+    border: none;
+    background-color:#124559;
     border-radius: 1vh;
+
 }
 .searchBtn:hover{
-    background-color: rgba(190, 226, 226,0.3);
-    color: black;
+    font-weight: bolder;
 }
 .search-results{
     display: flex;
@@ -78,7 +77,9 @@ body{
     font-size: medium;
     padding-left: 1.5vw;
 }
-
+#input::placeholder{
+    color: #bee2e2;
+}
 @media(max-width:275px){
     .search-result-for h1{
         height: 5rem ;
@@ -93,9 +94,16 @@ body{
         border-radius: 100%;
         transition: 0.5s;
     }
-    #input:hover{
+    #input:hover {
         width: 10rem;
         border-radius: 2rem;
+        
     }
+    
+    .searchBtn{
+    
+       visibility: hidden;
+    }
+    
 }
 
