@@ -10,7 +10,7 @@
 }
 .login, .sign-up-box{
     position: absolute;
-    /* display: none; */
+    display: none;
     z-index: 100;
     top: 13vh;
     left: 35vw;
@@ -37,7 +37,7 @@
 .login .loginbox.open {
     opacity: 1;
 }
-.sign-up-box .sign-up-sub-box.opened {
+.sign-up-box .sign-up-sub-box.open {
     opacity: 1;
 }
 h2 {
