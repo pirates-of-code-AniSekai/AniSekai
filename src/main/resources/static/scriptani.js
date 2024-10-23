@@ -19,7 +19,7 @@ const SignUp = document.querySelector('.sign-up-box');
 const SignUpContent = document.querySelector('.sign-up-sub-box');
 
 openSignUp.addEventListener('click', () => {
-  const isOpen = SignUpContent.classList.toggle('opened');
+  const isOpen = SignUpContent.classList.toggle('open');
   if (isOpen) {
     SignUp.style.display = 'flex';
     cover.style.display = 'flex';
