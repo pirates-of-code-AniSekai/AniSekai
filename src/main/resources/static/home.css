@@ -194,10 +194,10 @@ body::-webkit-scrollbar {
 .about{
     font-size:xx-large;
     width: 50vw;
-    height: 30vh;
+    height: 40vh;
     overflow: hidden;
     position: relative;
-    bottom: 40%;
+    bottom: 45%;
     left: 5%;
 }
 .about span{
