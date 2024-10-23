@@ -1,5 +1,6 @@
 
 const anime_id = localStorage.getItem("anime_id");
+console.log("id: ",anime_id);
 const baseUrl = "https://anime-api-steel.vercel.app/meta/anilist/info"
 
 const bg_cover = document.querySelector(".bg-cover");
