@@ -15,6 +15,12 @@ openmenu.addEventListener("click", (event) => {
   openmenu.classList.toggle('show');
 });
 
+const profilebtn=document.querySelector('.profile-icon');
+const profile=document.querySelector('.profile-bar');
+profilebtn.addEventListener("click", (event) => {
+  profile.classList.toggle('open');
+});
+
 let list=document.querySelector('.slider .list');
 let items=document.querySelectorAll('.slider .list .item');
 let dots=document.querySelectorAll('.slider .dots button');
