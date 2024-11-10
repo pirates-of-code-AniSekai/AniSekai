@@ -73,8 +73,8 @@ body::-webkit-scrollbar {
 }
 .details p{
     font-size: larger;
-    position: fixed;
-    bottom: 5vh;
+    position: relative;
+    top: 40vh;
 }
 #fullScreenBtn{
     height: 2vh;
