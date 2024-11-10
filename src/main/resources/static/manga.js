@@ -35,7 +35,7 @@ const volumeNames = document.querySelectorAll('.volumename');
         individualChapters.forEach((chapter, i) => {
           setTimeout(() => {
             chapter.classList.add('visible');
-          }, i * 200);
+          }, i * 100);
         });
       }
     });

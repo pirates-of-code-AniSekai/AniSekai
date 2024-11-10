@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manga Reader</title>
+    <link rel="stylesheet" href="mangacontent.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <div class="logo"><img src="Icons/Anisekai.png"><span>ANISEKAI</span></div>
+        <div class="manganame">
+            <p>Manga Name</p>
+            <div style="margin: 1vh 0;"><span class="year">1999</span><span>&#183</span>
+                <span class="status">Status</span></div>
+            <div><span id="genre1">Action</span><span>&#183</span>
+            <span id="genre2">Adventure</span><span>&#183</span>
+            <span id="genre3">Comedy</span></div>
+        </div>
+        <div class="reading">
+            <input type="text" name="search" id="input" placeholder="Search Chapter">
+            <p>You are reading</p>
+            <p>Chapter no of Vol no</p>
+            <button class="prev"><img src="Icons/left-arrow-alt-regular-24.png"/></button>
+            <button class="next"><img src="Icons/right-arrow-alt-regular-24.png"/></button>
+        </div>
+        <div class="details">
+            <p><a href="manga.html">More Details</a></p>
+        </div>
+    </div>
+    <div class="manga"><img src=""><img src="Icons/full-screen.png" title="Full Screen" id="fullScreenBtn"></div>
+    <script src="mangacontent.js"></script>
+</body>
+</html>

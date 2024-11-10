@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: #bee2e2;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+body{
+    background-color: #062f41;
+    display: flex;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    width: 18vw;
+    height: 100vh;
+    background-color: #11445b;
+    transition: width 0.3s ease;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    width: 10vw;
+    /* padding-right: 3vh; */
+    position: relative;
+    transform: translateX(-25%);
+}
+.logo span{
+    font-size: xx-large;
+    font-weight: bolder;
+    transform: translateX(-55%);
+}
+.manganame, .reading, .details{
+    margin-top: 3vh;
+    margin-left: 2vh;
+}
+.manganame p{
+    font-size: x-large; 
+    font-weight: bold;
+}
+.manganame span{
+    margin-right: 0.2vh;
+    color: rgba(190, 226, 226,0.75);
+    font-size: medium;
+}
+.reading input{
+    background-color:transparent;
+    border: 1px solid;
+    padding: 1.2vh;
+    width: 12vw;
+    border-radius: 1vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+.reading p{
+    margin-bottom: 1vh;
+}
+.reading button{
+    background-color:#062f41;
+    border: none;
+    width: 4vw;
+    margin-right: 1vw;
+    margin-top: 1vh;
+    border-radius: 1vh;
+}
+.details p{
+    font-size: larger;
+    position: fixed;
+    bottom: 5vh;
+}
+#fullScreenBtn{
+    height: 2vh;
+    padding: 1vh;
+    border: 1px solid;
+    border-radius: 50%;
+    position: fixed;
+    right: 0.5vw;
+    bottom: 1vh;
+    z-index: 100;
+}
+#fullScreenBtn:hover{
+    cursor: pointer;
+}
+.sidebar.closed{
+    width: 0;
+    overflow: hidden;
+}
+.manga{
+    width: 80vw;
+    transition: width 0.3s ease;
+}
+.manga.fullscreen{
+    width: 100vw;
+}
