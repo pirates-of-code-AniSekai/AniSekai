@@ -47,12 +47,12 @@ const loadData = async () => {
     json.recommendations.map((anime) => {
         let child = document.createElement("li");
         child.innerHTML = `<img src=${anime.image}>`;
-            child.addEventListener("click",() => {
-                localStorage.clear();
-                localStorage.setItem("anime_id",anime.id);
+        child.addEventListener("click",() => {
+            localStorage.clear();
+            localStorage.setItem("anime_id",anime.id);
 
-                window.location.href = "content.html";
-            })
+            window.location.href = "content.html";
+        })
         recList.appendChild(child);
     })
 
