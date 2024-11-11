@@ -29,4 +29,17 @@ public class ProxyController {
             return ResponseEntity.status(404).body(null);
         }
     }
+
+    @GetMapping("/proxy/video")
+    public ResponseEntity<InputStreamResource> proxyVideo(@RequestParam String url) {
+        try {
+            URL videoUrl = new URL(url);
+            InputStream inputStream = videoUrl.openStream();
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+            return ResponseEntity.ok().headers(headers).body(new InputStreamResource(inputStream));
+        } catch (Exception ex) {
+            return ResponseEntity.status(404).body(null);
+        }
+    }
 }

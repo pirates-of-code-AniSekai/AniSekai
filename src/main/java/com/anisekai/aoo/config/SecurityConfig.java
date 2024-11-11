@@ -28,6 +28,8 @@ public class SecurityConfig {
                         .requestMatchers("/login").permitAll()
                         .requestMatchers("/proxy/**").permitAll()
                         .requestMatchers("/register/**").permitAll()
+                                .requestMatchers("/watchlist/**").permitAll()
+//                        .requestMatchers("/**/*.m3u8").permitAll()
                         .anyRequest().authenticated()
 //                                .anyRequest().permitAll()
                 )
