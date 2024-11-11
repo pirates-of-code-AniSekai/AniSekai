@@ -23,12 +23,13 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         http
                 .authorizeHttpRequests((auth) -> auth
-//                        .requestMatchers("/Icons/**").permitAll()
-//                        .requestMatchers("/home.css","/styleani.css","/home.js","/scriptani.js").permitAll()
-//                        .requestMatchers("/login").permitAll()
-//                        .requestMatchers("/proxy/**").permitAll()
-//                        .anyRequest().authenticated()
-                                .anyRequest().permitAll()
+                        .requestMatchers("/Icons/**").permitAll()
+                        .requestMatchers("/home.css","/styleani.css","/home.js","/scriptani.js","register.js").permitAll()
+                        .requestMatchers("/login").permitAll()
+                        .requestMatchers("/proxy/**").permitAll()
+                        .requestMatchers("/register/**").permitAll()
+                        .anyRequest().authenticated()
+//                                .anyRequest().permitAll()
                 )
                 .formLogin(form -> form
                         .loginPage("/anisekai.html").permitAll()
