@@ -9,7 +9,7 @@
   font-style: normal;
 }
 body{
-    background-color: #062f41;
+    background-color: #062431 ;
     display: flex;
 }
 body::-webkit-scrollbar {
@@ -20,7 +20,7 @@ body::-webkit-scrollbar {
     flex-direction: column;
     width: 18vw;
     height: 100vh;
-    background-color: #11445b;
+    background-color:  #102b38;
     transition: width 0.3s ease;
 }
 .logo{
