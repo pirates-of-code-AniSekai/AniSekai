@@ -21,22 +21,28 @@
     profile.classList.toggle('open');
   });
 
-const volumeNames = document.querySelectorAll('.volumename');
-  const chaptersList = document.querySelectorAll('.chapters');
+// Get the container where volumes are rendered
+const container = document.querySelector('.volumes');
 
-  volumeNames.forEach((volumeName, index) => {
-    volumeName.addEventListener("click", () => {
-      const chapters = chaptersList[index];
-      chapters.classList.toggle('openChapter');
-      
-      if (chapters.classList.contains('openChapter')) {
-        const individualChapters = chapters.querySelectorAll('.chapter');
-        individualChapters.forEach(chapter => chapter.classList.remove('visible'));
-        individualChapters.forEach((chapter, i) => {
-          setTimeout(() => {
-            chapter.classList.add('visible');
-          }, i * 100);
-        });
-      }
-    });
-  });
+container.addEventListener('click', (event) => {
+  // Check if the clicked element is a volume name
+  if (event.target.closest('.volumename')) {
+    const volumeName = event.target.closest('.volumename');
+    const chapters = volumeName.nextElementSibling; // The chapters container
+
+    // Toggle 'openChapter' class on the chapters container
+    chapters.classList.toggle('openChapter');
+
+    if (chapters.classList.contains('openChapter')) {
+      const individualChapters = chapters.querySelectorAll('.chapter');
+      individualChapters.forEach((chapter) => chapter.classList.remove('visible'));
+
+      // Add 'visible' class to each chapter with a delay
+      individualChapters.forEach((chapter, i) => {
+        setTimeout(() => {
+          chapter.classList.add('visible');
+        }, i * 100);
+      });
+    }
+  }
+});
