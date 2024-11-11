@@ -12,14 +12,14 @@ async function getTrending() {
         const response = await fetch(`${baseUrl}/meta/anilist/trending`);
         const json = await response.json();
         json.results.map(data => {
-            let childHtml = `<img src=${data.image}>
+            let childHtml = `<img class="animeImage" src=${data.image}>
                         <div class="aboutanime">
                         <div class="innerabout">
                                 <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english}</h3>
                                 <p class="animecontent" style="font-size:1.7vh;text-align:justify;">${data.description}</p>
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
-                                    <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
+                                    <div title="LIKE" class="aboutmenu like"><img src="Icons/heart.png"></div>
                                     <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
                                     <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
                                     <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
@@ -29,11 +29,27 @@ async function getTrending() {
                         `;
             let child = document.createElement("li");
             child.innerHTML = childHtml;
-            child.addEventListener("click",() => {
+
+            child.querySelector('.like').addEventListener("click", () => {
+               const response =  fetch("http://localhost:8080/watchlist", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        userId: localStorage.getItem("user_id"),
+                        animeId: data.id
+                    })
+                })
+
+               alert("added to watchlist");
+            });
+
+            child.querySelector(".animeImage").addEventListener("click",() => {
                 localStorage.clear();
                 localStorage.setItem("anime_id",data.id);
 
-                window.location.href = "content.html";
+                 window.location.href = "content.html";
             })
             trendingGridDiv.appendChild(child);
         })
@@ -48,14 +64,14 @@ async function getPopular() {
         const response = await fetch(`${baseUrl}/meta/anilist/popular`);
         const json = await response.json();
         json.results.map(data => {
-            let childHtml = `<img src=${data.image}>
+            let childHtml = `<img class="animeImage" src=${data.image}>
                         <div class="aboutanime">
                         <div class="innerabout">
                                 <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english}</h3>
                                 <p class="animecontent" style="font-size:1.7vh;text-align:justify; ">${data.description}</p>
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
-                                    <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
+                                    <div title="LIKE" class="aboutmenu like"><img src="Icons/heart.png"></div>
                                     <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
                                     <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
                                     <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
@@ -66,7 +82,22 @@ async function getPopular() {
 
             let child = document.createElement("li");
             child.innerHTML = childHtml;
-            child.addEventListener("click",() => {
+            child.querySelector('.like').addEventListener("click", () => {
+                const response =  fetch("http://localhost:8080/watchlist", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        userId: localStorage.getItem("user_id"),
+                        animeId: data.id
+                    })
+                })
+
+                alert("added to watchlist");
+            });
+
+            child.querySelector(".animeImage").addEventListener("click",() => {
                 localStorage.clear();
                 localStorage.setItem("anime_id",data.id);
 
@@ -85,14 +116,14 @@ async function getSpecial() {
         const response = await fetch(`${baseUrl}/meta/anilist/advanced-search?format=SPECIAL`);
         const json = await response.json();
         json.results.map(data => {
-            let childHtml = `<img src=${data.image}>
+            let childHtml = `<img class="animeImage" src=${data.image}>
                         <div class="aboutanime">
                         <div class="innerabout">
                                 <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english}</h3>
                                 <p class="animecontent" style="font-size:1.7vh;text-align:justify; ">${data.description}</p>
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
-                                    <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
+                                    <div title="LIKE" class="aboutmenu like"><img src="Icons/heart.png"></div>
                                     <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
                                     <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
                                     <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
@@ -102,7 +133,22 @@ async function getSpecial() {
                         `;
             let child = document.createElement("li");
             child.innerHTML = childHtml;
-            child.addEventListener("click",() => {
+            child.querySelector('.like').addEventListener("click", () => {
+                const response =  fetch("http://localhost:8080/watchlist", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        userId: localStorage.getItem("user_id"),
+                        animeId: data.id
+                    })
+                })
+
+                alert("added to watchlist");
+            });
+
+            child.querySelector(".animeImage").addEventListener("click",() => {
                 localStorage.clear();
                 localStorage.setItem("anime_id",data.id);
 
@@ -119,14 +165,14 @@ async function getMovies() {
         const response = await fetch(`${baseUrl}/meta/anilist/advanced-search?format=MOVIE`);
         const json = await response.json();
         json.results.map(data => {
-            let childHtml = `<img src=${data.image}>
+            let childHtml = `<img class="animeImage" src=${data.image}>
                         <div class="aboutanime">
                         <div class="innerabout">
                                 <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english}</h3>
                                 <p class="animecontent" style="font-size:1.7vh;text-align:justify; ">${data.description}</p>
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
-                                    <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
+                                    <div title="LIKE" class="aboutmenu like"><img src="Icons/heart.png"></div>
                                     <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
                                     <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
                                     <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
@@ -136,12 +182,27 @@ async function getMovies() {
                         `;
             let child = document.createElement("li");
             child.innerHTML = childHtml
-            child.addEventListener("click",() => {
+            child.querySelector('.like').addEventListener("click", () => {
+                const response =  fetch("http://localhost:8080/watchlist", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        userId: localStorage.getItem("user_id"),
+                        animeId: data.id
+                    })
+                })
+
+                alert("added to watchlist");
+            });
+
+            child.querySelector(".animeImage").addEventListener("click",() => {
                 localStorage.clear();
                 localStorage.setItem("anime_id",data.id);
 
                 window.location.href = "content.html";
-            });
+            })
             movieListDiv.appendChild(child);
         })
 
@@ -155,14 +216,14 @@ async function getRomance() {
         const response = await fetch(`${baseUrl}/meta/anilist/advanced-search?genres=["Romance"]`);
         const json = await response.json();
         json.results.map(data => {
-            let childHtml = `<img src=${data.image}>
+            let childHtml = `<img class="animeImage" src=${data.image}>
                         <div class="aboutanime">
                         <div class="innerabout">
                                 <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english}</h3>
                                 <p class="animecontent" style="font-size:1.7vh;text-align:justify; ">${data.description}</p>
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
-                                    <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
+                                    <div title="LIKE" class="aboutmenu like"><img src="Icons/heart.png"></div>
                                     <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
                                     <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
                                     <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
@@ -172,11 +233,26 @@ async function getRomance() {
                         `;
             let child = document.createElement("li");
             child.innerHTML = childHtml
-            child.addEventListener("click",() => {
+            child.querySelector('.like').addEventListener("click", () => {
+                const response =  fetch("http://localhost:8080/watchlist", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        userId: localStorage.getItem("user_id"),
+                        animeId: data.id
+                    })
+                })
+
+                alert("added to watchlist");
+            });
+            child.querySelector(".animeImage").addEventListener("click",() => {
                 localStorage.clear();
                 localStorage.setItem("anime_id",data.id);
+
                 window.location.href = "content.html";
-            });
+            })
             romanceListDiv.appendChild(child);
         })
     } catch (error) {
@@ -188,14 +264,14 @@ async function getAction() {
         const response = await fetch(`${baseUrl}/meta/anilist/advanced-search?genres=["Action"]`);
         const json = await response.json();
         json.results.map(data => {
-            let childHtml = `<img src=${data.image}>
+            let childHtml = `<img class="animeImage" src=${data.image}>
                         <div class="aboutanime">
                         <div class="innerabout">
                                 <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english}</h3>
                                 <p class="animecontent" style="font-size:1.7vh;text-align:justify; ">${data.description}</p>
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
-                                    <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
+                                    <div title="LIKE" class="aboutmenu like"><img src="Icons/heart.png"></div>
                                     <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
                                     <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
                                     <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
@@ -205,11 +281,26 @@ async function getAction() {
                         `;
             let child = document.createElement("li");
             child.innerHTML = childHtml
-            child.addEventListener("click",() => {
+            child.querySelector('.like').addEventListener("click", () => {
+                const response =  fetch("http://localhost:8080/watchlist", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        userId: localStorage.getItem("user_id"),
+                        animeId: data.id
+                    })
+                })
+
+                alert("added to watchlist");
+            });
+            child.querySelector(".animeImage").addEventListener("click",() => {
                 localStorage.clear();
                 localStorage.setItem("anime_id",data.id);
+
                 window.location.href = "content.html";
-            });
+            })
             actionListDiv.appendChild(child);
         })
     } catch (error) {
@@ -221,14 +312,14 @@ async function getComedy() {
         const response = await fetch(`${baseUrl}/meta/anilist/advanced-search?genres=["Comedy"]`);
         const json = await response.json();
         json.results.map(data => {
-            let childHtml = `<img src=${data.image}>
+            let childHtml = `<img class="animeImage" src=${data.image}>
                         <div class="aboutanime">
                         <div class="innerabout">
                                 <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english}</h3>
                                 <p class="animecontent" style="font-size:1.7vh;text-align:justify; ">${data.description}</p>
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
-                                    <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
+                                    <div title="LIKE" class="aboutmenu like"><img src="Icons/heart.png"></div>
                                     <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
                                     <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
                                     <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
@@ -238,11 +329,26 @@ async function getComedy() {
                         `;
             let child = document.createElement("li");
             child.innerHTML = childHtml
-            child.addEventListener("click",() => {
+            child.querySelector('.like').addEventListener("click", () => {
+                const response =  fetch("http://localhost:8080/watchlist", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        userId: localStorage.getItem("user_id"),
+                        animeId: data.id
+                    })
+                })
+
+                alert("added to watchlist");
+            });
+            child.querySelector(".animeImage").addEventListener("click",() => {
                 localStorage.clear();
                 localStorage.setItem("anime_id",data.id);
+
                 window.location.href = "content.html";
-            });
+            })
             comedyListDiv.appendChild(child);
         })
     } catch (error) {

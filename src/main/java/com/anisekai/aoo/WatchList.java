@@ -10,22 +10,19 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "users")
+@Table(name = "watchlist")
 @Getter
 @Setter
-public class User {
+public class WatchList {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
+
     @Column(name = "user_id")
-    private int userId;
+    private Integer userId;
 
-    @Column(name = "username")
-    private String username;
-
-    @Column(name = "password")
-    private String password;
-
-    @Column(name = "enabled")
-    private Boolean enabled;
+    @Column(name = "anime_id")
+    private String animeId;
 }

@@ -23,4 +23,9 @@ public class UserService {
             return null;
         }
     }
+
+    public User createUser(User user) {
+//        user.setPassword();
+        return userRepository.save(user);
+    }
 }

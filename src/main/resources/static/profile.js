@@ -5,8 +5,10 @@ const logOutDiv = document.querySelector(".log-out");
 async function loadUser() {
     const request = await fetch("http://localhost:8080/user");
     const data = await request.json();
-    emailDiv.innerHTML = data.username;
     console.log(data);
+    emailDiv.innerHTML = data.username;
+    localStorage.setItem("user_id",data.userId);
+    console.log(localStorage.getItem("user_id"));
 }
 
 logOutDiv.addEventListener("click", async () => {
