@@ -1,5 +1,5 @@
 const baseUrl = "https://api.mangadex.org/manga";
-const id = "259dfd8a-f06a-4825-8fa6-a2dcd7274230";
+const id = localStorage.getItem('manga_id');
 const coverArtDiv = document.querySelector(".coverArtDiv");
 // const imageUrl = `http://localhost:8080/cover-image/${json.data.id}/${coverData.attributes.fileName}`;
 let languages = ["en"]
