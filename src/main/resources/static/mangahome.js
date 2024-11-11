@@ -62,4 +62,7 @@ document.addEventListener('scroll',()=>{
       reloadSlider();
     })
   });
-  
+const text=document.querySelector('.name');
+window.onload=function(){
+    text.classList.add('textdrop');
+};

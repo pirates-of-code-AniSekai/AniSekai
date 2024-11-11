@@ -172,7 +172,7 @@ body::-webkit-scrollbar {
 }
 .banner img{
     width: 100vw;
-    height:20vh;
+    height:40vh;
     object-fit:cover;
     object-position: 100% 30%;
     opacity: 0.2;
@@ -180,18 +180,22 @@ body::-webkit-scrollbar {
 }
 .name{
     width: 100vw;
-    height: 20vh;
+    height: 30vh;
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: xx-large;
     font-weight: bolder;
-    /* transform: translateY(-100%); */
+    transform: translateY(-100%);
+    transition: transform 1s ease;
+}
+.textdrop{
+    transform: translateY(0%);
 }
 .slider{
     max-width: 100vw;
-    height: 80vh;
+    height: 0vh;
     position: relative;
     overflow: hidden;
 }
