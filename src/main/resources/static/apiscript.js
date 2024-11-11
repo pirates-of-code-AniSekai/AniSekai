@@ -1,4 +1,4 @@
-const baseUrl = "https://anime-api-steel.vercel.app"
+const baseUrl = "https://aniwatch-api-lime.vercel.app"
 const trendingGridDiv = document.querySelector(".trendingList");
 const popularListDiv = document.querySelector(".popularList");
 const specialListDiv = document.querySelector(".specialList");
@@ -9,13 +9,14 @@ const comedyListDiv = document.querySelector(".comedyList");
 
 async function getTrending() {
     try {
-        const response = await fetch(`${baseUrl}/meta/anilist/trending`);
+        const response = await fetch(`${baseUrl}/api/v2/hianime/home`);
         const json = await response.json();
-        json.results.map(data => {
-            let childHtml = `<img src=${data.image}>
+        console.log(json);
+        json.data.topAiringAnimes.map(data => {
+            let childHtml = `<img src=${data.poster}>
                         <div class="aboutanime">
                         <div class="innerabout">
-                                <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english}</h3>
+                                <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.name}</h3>
                                 <p class="animecontent" style="font-size:1.7vh;text-align:justify;">${data.description}</p>
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
@@ -36,6 +37,66 @@ async function getTrending() {
                 window.location.href = "content.html";
             })
             trendingGridDiv.appendChild(child);
+
+
+            // fetching popular
+            json.data.mostPopularAnimes.map(data => {
+                let childHtml = `<img src=${data.poster}>
+                            <div class="aboutanime">
+                            <div class="innerabout">
+                                    <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.name}</h3>
+                                    <p class="animecontent" style="font-size:1.7vh;text-align:justify; ">${data.description}</p>
+                                    <div class="aboutMenu"
+                                        style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
+                                        <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
+                                        <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
+                                        <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
+                                        <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            `;
+            
+                let child = document.createElement("li");
+                child.innerHTML = childHtml;
+                child.addEventListener("click",() => {
+                    localStorage.clear();
+                    localStorage.setItem("anime_id",data.id);
+    
+                    window.location.href = "content.html";
+                })
+                popularListDiv.appendChild(child);
+            })
+
+            // spotlight animes
+
+            json.data.spotlightAnimes.map(data => {
+                let childHtml = `<img src=${data.poster}>
+                            <div class="aboutanime">
+                            <div class="innerabout">
+                                    <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.name}</h3>
+                                    <p class="animecontent" style="font-size:1.7vh;text-align:justify; ">${data.description}</p>
+                                    <div class="aboutMenu"
+                                        style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
+                                        <div title="LIKE" class="aboutmenu"><img src="Icons/heart.png"></div>
+                                        <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
+                                        <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
+                                        <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            `;
+                let child = document.createElement("li");
+                child.innerHTML = childHtml;
+                child.addEventListener("click",() => {
+                    localStorage.clear();
+                    localStorage.setItem("anime_id",data.id);
+    
+                    window.location.href = "content.html";
+                })
+                specialListDiv.appendChild(child);
+            })
+            
         })
     } catch (error) {
         console.error(error)
@@ -45,13 +106,14 @@ async function getTrending() {
 
 async function getPopular() {
     try {
-        const response = await fetch(`${baseUrl}/meta/anilist/popular`);
+        const response = await fetch(`${baseUrl}/api/v2/hianime/home`);
         const json = await response.json();
-        json.results.map(data => {
-            let childHtml = `<img src=${data.image}>
+        console.log(json.data.mostPopularAnimes);
+        json.data.mostPopularAnimes.map(data => {
+            let childHtml = `<img src=${data.poster}>
                         <div class="aboutanime">
                         <div class="innerabout">
-                                <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english}</h3>
+                                <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.name}</h3>
                                 <p class="animecontent" style="font-size:1.7vh;text-align:justify; ">${data.description}</p>
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
@@ -116,13 +178,14 @@ async function getSpecial() {
 
 async function getMovies() {
     try {
-        const response = await fetch(`${baseUrl}/meta/anilist/advanced-search?format=MOVIE`);
+        const response = await fetch(`${baseUrl}/api/v2/hianime/category/movie`);
         const json = await response.json();
-        json.results.map(data => {
-            let childHtml = `<img src=${data.image}>
+        console.log(json.data.animes);
+        json.data.animes.map(data => {
+            let childHtml = `<img src=${data.poster}>
                         <div class="aboutanime">
                         <div class="innerabout">
-                                <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english}</h3>
+                                <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.name}</h3>
                                 <p class="animecontent" style="font-size:1.7vh;text-align:justify; ">${data.description}</p>
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
@@ -152,13 +215,14 @@ async function getMovies() {
 
 async function getRomance() {
     try {
-        const response = await fetch(`${baseUrl}/meta/anilist/advanced-search?genres=["Romance"]`);
+        const response = await fetch(`${baseUrl}/api/v2/hianime/genre/Romance`);
         const json = await response.json();
-        json.results.map(data => {
-            let childHtml = `<img src=${data.image}>
+        console.log("romance",json);
+        json.data.animes.map(data => {
+            let childHtml = `<img src=${data.poster}>
                         <div class="aboutanime">
                         <div class="innerabout">
-                                <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english}</h3>
+                                <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.name}</h3>
                                 <p class="animecontent" style="font-size:1.7vh;text-align:justify; ">${data.description}</p>
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
@@ -185,13 +249,14 @@ async function getRomance() {
 }
 async function getAction() {
     try {
-        const response = await fetch(`${baseUrl}/meta/anilist/advanced-search?genres=["Action"]`);
+        const response = await fetch(`${baseUrl}/api/v2/hianime/genre/shounen`);
         const json = await response.json();
-        json.results.map(data => {
-            let childHtml = `<img src=${data.image}>
+        console.log("action",json);
+        json.data.animes.map(data => {
+            let childHtml = `<img src=${data.poster}>
                         <div class="aboutanime">
                         <div class="innerabout">
-                                <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english}</h3>
+                                <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.name}</h3>
                                 <p class="animecontent" style="font-size:1.7vh;text-align:justify; ">${data.description}</p>
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
@@ -218,13 +283,13 @@ async function getAction() {
 }
 async function getComedy() {
     try {
-        const response = await fetch(`${baseUrl}/meta/anilist/advanced-search?genres=["Comedy"]`);
+        const response = await fetch(`${baseUrl}/api/v2/hianime/genre/Comedy`);
         const json = await response.json();
-        json.results.map(data => {
-            let childHtml = `<img src=${data.image}>
+        json.data.animes.map(data => {
+            let childHtml = `<img src=${data.poster}>
                         <div class="aboutanime">
                         <div class="innerabout">
-                                <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english}</h3>
+                                <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.name}</h3>
                                 <p class="animecontent" style="font-size:1.7vh;text-align:justify; ">${data.description}</p>
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
@@ -252,8 +317,8 @@ async function getComedy() {
 
 
 getTrending()
-getPopular()
-getSpecial()
+// getPopular()
+// getSpecial()
 getMovies()
 getRomance()
 getAction()
