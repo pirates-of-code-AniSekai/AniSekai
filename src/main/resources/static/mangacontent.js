@@ -4,3 +4,5 @@ document.getElementById('fullScreenBtn').addEventListener('click', function() {
     sidebar.classList.toggle('closed');
     manga.classList.toggle('fullscreen');
 });
+
+console.log(localStorage.getItem('episode_id'));
