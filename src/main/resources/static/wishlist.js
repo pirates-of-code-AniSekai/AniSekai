@@ -12,6 +12,12 @@ async function fetchWatchList() {
         let child = document.createElement('div');
         child.classList.add('box');
         child.innerHTML = `<img class="poster" src="${animeData.image}"</img>`;
+        child.addEventListener(("click"),() => {
+
+            localStorage.setItem("anime_id",animeData.id);
+
+            window.location.href = "content.html";
+        })
         container.appendChild(child);
     })
 }

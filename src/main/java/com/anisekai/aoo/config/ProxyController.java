@@ -2,6 +2,7 @@ package com.anisekai.aoo.config;
 
 import java.io.InputStream;
 import java.net.URL;
+import java.net.URLConnection;
 
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
@@ -29,6 +30,28 @@ public class ProxyController {
             return ResponseEntity.status(404).body(null);
         }
     }
+
+    @GetMapping("/proxy-image")
+    public ResponseEntity<InputStreamResource> getProxyImage(@RequestParam String imageUrl) {
+        try {
+            URL url = new URL(imageUrl);
+            URLConnection connection = url.openConnection();
+            InputStream inputStream = connection.getInputStream();
+
+            // Get the content type from the URLConnection (e.g., "image/png", "image/jpeg")
+            String contentType = connection.getContentType();
+
+            // Set headers with detected content type
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.parseMediaType(contentType));
+
+            return ResponseEntity.ok().headers(headers).body(new InputStreamResource(inputStream));
+        } catch (Exception ex) {
+            return ResponseEntity.status(404).body(null);
+        }
+    }
+
+
 
     @GetMapping("/proxy/video")
     public ResponseEntity<InputStreamResource> proxyVideo(@RequestParam String url) {
