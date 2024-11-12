@@ -5,7 +5,6 @@ body{
   font-optical-sizing: auto;
   font-style: normal;
 }
-
 .search-bar{
     display: flex;
     justify-content: center;
@@ -15,7 +14,6 @@ body{
     height: 10vh;
     width:auto;
     margin-bottom: 2rem;
-
 }
 
 .search-result-for h1{
@@ -33,12 +31,13 @@ body{
     right: 1vw;
     color: #bee2e2;
     border: none;
-    background-color:#124559;
+    background-color:transparent;
     border-radius: 1vh;
-
+    transition: font-weight 0.5s ease;
 }
 .searchBtn:hover{
-    font-weight: bolder;
+    font-weight: bold;
+    cursor: pointer;
 }
 .search-results{
     display: flex;
