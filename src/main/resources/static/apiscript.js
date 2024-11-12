@@ -75,6 +75,8 @@ async function getTrending() {
 
                sliderListDiv.innerHTML += sliderItem;
 
+                initializeSlider();
+
             })
         })
     } catch (error) {
@@ -377,6 +379,50 @@ function infoAnime(animeId) {
 function playTrailer(trailerId) {
     const trailerUrl = `https://www.youtube.com/embed/${trailerId}`;
     window.open(trailerUrl, "_blank");
+}
+
+// Reinitialize slider after loading items
+function initializeSlider() {
+    let list = document.querySelector('.slider .list');
+    let items = document.querySelectorAll('.slider .list .item');
+    let dots = document.querySelectorAll('.slider .dots button');
+    let prev = document.getElementById('prev');
+    let next = document.getElementById('next');
+    let active = 0;
+    let lengthItems = items.length - 1;
+
+    next.onclick = function() {
+        active = active + 1 > lengthItems ? 0 : active + 1;
+        reloadSlider();
+    };
+
+    prev.onclick = function() {
+        active = active - 1 < 0 ? lengthItems : active - 1;
+        reloadSlider();
+    };
+
+    let refreshSlider = setInterval(() => { next.click(); }, 5000);
+
+    function reloadSlider() {
+        let checkLeft = items[active].offsetLeft;
+        list.style.left = -checkLeft + 'px';
+
+        let lastActiveDot = document.querySelector('.slider .dots button.active');
+        if (lastActiveDot) {
+            lastActiveDot.classList.remove('active');
+        }
+        dots[active].classList.add('active');
+
+        clearInterval(refreshSlider);
+        refreshSlider = setInterval(() => { next.click(); }, 3000);
+    }
+
+    dots.forEach((button, key) => {
+        button.addEventListener('click', function() {
+            active = key;
+            reloadSlider();
+        });
+    });
 }
 
 

@@ -20,6 +20,8 @@ async function getData() {
     console.log(imageUrl);
     console.log(coverData);
 
+    defaultResult(json.data.attributes.tags[1].attributes.name.en);
+
     coverArtDiv.innerHTML =
         `<img class="mainimg" src=${imageUrl}>
         <div style="display:flex;">
@@ -35,11 +37,20 @@ async function getData() {
         </div>
         </div>`;
 
+
+
     const mangaFeed = await fetch(`${baseUrl}/${id}/aggregate`);
     const feedJson = await mangaFeed.json();
     console.log(feedJson);
     // let chaptersMap = mapChaptersByVolume(feedJson.data);
     // console.log(chaptersMap);
+
+    const readNowButton = document.getElementById("readNowButton");
+    readNowButton.addEventListener("click", function() {
+        localStorage.clear();
+        localStorage.setItem('manga_id',feedJson.volumes[1].chapters[1].id);
+        window.location.href="manga.html";
+    });
     renderChaptersByVolume(feedJson.volumes);
 }
 
@@ -47,7 +58,9 @@ function renderChaptersByVolume(data) {
     // Select the container where the volumes will be displayed
     const container = document.querySelector('.volumes');
     container.innerHTML = ''; // Clear any existing content
-    
+
+    // event listener on readnow
+
     // Iterate through each volume in the data
     for (const volumeKey in data) {
         const volumeData = data[volumeKey];
@@ -94,6 +107,31 @@ function renderChaptersByVolume(data) {
         container.appendChild(volumeDiv);
     }
 }
+
+async function defaultResult(name) {
+    const recListDiv = document.querySelector('.recList');
+
+    const baseUrl = "https://api.mangadex.org/manga";
+    const response = await fetch(`${baseUrl}?title=${name}&includes%5B%5D=cover_art`);
+    const json = await  response.json();
+
+    json.data.map((ent) => {
+        let child = document.createElement('li');
+
+        let cover = ent.relationships.find(rel => rel.type === "cover_art");
+        child.classList.add('search-res-box');
+        child.innerHTML = `<img src="http://localhost:8080/cover-image?mangaId=${ent.id}&fileName=${cover.attributes.fileName}"></img>`
+
+        child.addEventListener("click",() => {
+            localStorage.clear();
+            localStorage.setItem('manga_id',ent.id);
+            window.location.href="manga.html";
+        })
+        recListDiv.appendChild(child);
+    })
+    console.log(json);
+}
+
 
 
 getData();

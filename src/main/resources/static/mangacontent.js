@@ -7,7 +7,7 @@ document.getElementById('fullScreenBtn').addEventListener('click', function() {
 
 const chapter_id = localStorage.getItem('episode_id');
 
-const images = [];
+const images = ["./Icons/defaultManga.jpg"];
 
 async function fetchPages() {
      let response = await fetch(`https://api.mangadex.org/at-home/server/${chapter_id}`);
@@ -21,6 +21,7 @@ async function fetchPages() {
 
      console.log(json);
 }
+
 
 fetchPages();
 
@@ -40,4 +41,7 @@ next.addEventListener('click', ()=>{
     currentIndex = (currentIndex<images.length-1)? currentIndex+1 : 0;
     updateImage();
 });
+
+
+
 updateImage();
