@@ -353,7 +353,7 @@ body::-webkit-scrollbar {
 }
 .chapters{
     /* height: 40vh; */
-    width: 48vw;
+    width: 58vw;
     scrollbar-width:thin;
     margin: auto;
     display: flex;
