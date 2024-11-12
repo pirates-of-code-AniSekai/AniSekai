@@ -7,8 +7,7 @@ document.getElementById('fullScreenBtn').addEventListener('click', function() {
 
 const chapter_id = localStorage.getItem('episode_id');
 
-const images = ['Icons/final one piece.jpg',
-];
+const images = [];
 
 async function fetchPages() {
      let response = await fetch(`https://api.mangadex.org/at-home/server/${chapter_id}`);
