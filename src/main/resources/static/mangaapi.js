@@ -30,7 +30,7 @@ async function getData() {
             <span id="genre1">${json.data.attributes.tags[1].attributes.name.en}</span><span>&#183</span>
             <span id="genre2">${json.data.attributes.tags[2].attributes.name.en}</span><span>&#183</span>
             <span id="genre3">${json.data.attributes.tags[3].attributes.name.en}</span>
-            <p class="description">kjasckqfbeknvjbvik<p>
+            <p class="description">${json.data.attributes.description.en}<p>
             <div><button id="Read Now">Read Now</button></div>
         </div>
         </div>`;
