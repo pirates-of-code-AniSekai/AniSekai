@@ -16,18 +16,23 @@ async function getData() {
 
     let coverData = json.data.relationships.find((rel) => rel.type === "cover_art");
     let imageUrl = `http://localhost:8080/cover-image?mangaId=${json.data.id}&fileName=${coverData.attributes.fileName}`;
+    // let imageUrl = `https://s4.anilist.co/file/anilistcdn/media/anime/banner/1535.jpg`;
     console.log(imageUrl);
     console.log(coverData);
 
     coverArtDiv.innerHTML =
-        `<img src=${imageUrl}>
+        `<img class="mainimg" src=${imageUrl}>
+        <div style="display:flex;">
+        <div class="sidepic"><img src=${imageUrl}></div>
         <div class="about">
             <h1>${json.data.attributes.title.en}</h1>
             <span class="year">${json.data.attributes.year}</span><span>&#183</span>
             <span id="genre1">${json.data.attributes.tags[1].attributes.name.en}</span><span>&#183</span>
             <span id="genre2">${json.data.attributes.tags[2].attributes.name.en}</span><span>&#183</span>
             <span id="genre3">${json.data.attributes.tags[3].attributes.name.en}</span>
+            <p class="description">kjasckqfbeknvjbvik<p>
             <div><button id="Read Now">Read Now</button></div>
+        </div>
         </div>`;
 
     const mangaFeed = await fetch(`${baseUrl}/${id}/aggregate`);
