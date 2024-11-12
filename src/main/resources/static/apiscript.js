@@ -6,11 +6,13 @@ const movieListDiv = document.querySelector(".movieList");
 const romanceListDiv = document.querySelector(".romanceList");
 const actionListDiv = document.querySelector(".actionList");
 const comedyListDiv = document.querySelector(".comedyList");
+const sliderListDiv = document.querySelector(".sliderList");
 
 async function getTrending() {
     try {
         const response = await fetch(`${baseUrl}/meta/anilist/trending`);
         const json = await response.json();
+        console.log(json);
         json.results.map(data => {
             let childHtml = `<img class="animeImage" src=${data.image}>
                         <div class="aboutanime">
@@ -27,6 +29,8 @@ async function getTrending() {
                             </div>
                         </div>
                         `;
+
+
             let child = document.createElement("li");
             child.innerHTML = childHtml;
 
@@ -52,6 +56,28 @@ async function getTrending() {
                  window.location.href = "content.html";
             })
             trendingGridDiv.appendChild(child);
+
+
+
+            json.results.map(data => {
+                let sliderItem = `<div class="item">
+                <img src="${data.cover}">
+                <div class="about">
+                    <h1>${data.title.english.split(' ').slice(0, 3).join(' ')}</h1>
+                    <span class="year">${data.releaseDate}</span><span>&#183</span>
+                    <span id="genre1">${data.genres[0]}</span><span>&#183</span>
+                    <span id="genre2">${data.genres[1]}</span><span>&#183</span>
+                    <span id="genre3">${data.genres[2]}</span>
+                    <div><button id="playBtn" onclick="playTrailer( '${data.trailer.id}')">Watch Trailer</button>
+                        <button id="infoBtn" onclick="infoAnime(${data.id})" >More Info</button></div>
+                </div>
+            </div>`;
+
+
+
+               sliderListDiv.innerHTML += sliderItem;
+
+            })
         })
     } catch (error) {
         console.error(error)
@@ -355,6 +381,18 @@ async function getComedy() {
         console.error(error)
     }
 }
+
+function infoAnime(animeId) {
+    localStorage.clear();
+    localStorage.setItem("anime_id", animeId);
+    window.location.href = "content.html";
+}
+
+function playTrailer(trailerId) {
+    const trailerUrl = `https://www.youtube.com/embed/${trailerId}`;
+    window.open(trailerUrl, "_blank");
+}
+
 
 
 getTrending()
