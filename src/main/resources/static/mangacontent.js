@@ -5,13 +5,25 @@ document.getElementById('fullScreenBtn').addEventListener('click', function() {
     manga.classList.toggle('fullscreen');
 });
 
-console.log(localStorage.getItem('episode_id'));
+const chapter_id = localStorage.getItem('episode_id');
 
-const images = ['Icons/final one piece.jpg',
-    'Icons/final jjk.jpg', 
-    'Icons/final dragon ball.jpg',
-    'Icons/final death note.jpg'
-];
+const images = [];
+
+async function fetchPages() {
+     let response = await fetch(`https://api.mangadex.org/at-home/server/${chapter_id}`);
+     let json = await response.json();
+    console.log(json);
+
+     json.chapter.data.map((ch) => {
+         let page = `http://localhost:8080/proxy-image?imageUrl=${json.baseUrl}/data/${json.chapter.hash}/${ch}`;
+         images.push(page);
+     })
+
+     console.log(json);
+}
+
+fetchPages();
+
 let currentIndex = 0;
 const image = document.getElementById('image');
 const prev= document.getElementById('prev');

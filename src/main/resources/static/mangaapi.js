@@ -75,7 +75,6 @@ function renderChaptersByVolume(data) {
 
             chapterDiv.addEventListener("click",() => {
                 console.log(chapterData);
-                localStorage.clear();
                 localStorage.setItem('episode_id',chapterData.id);
                 // console.log(localStorage.getItem('episode_id'));
                 window.location.href = "mangacontent.html";
