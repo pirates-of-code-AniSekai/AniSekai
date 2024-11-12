@@ -21,6 +21,18 @@ body::-webkit-scrollbar {
     mix-blend-mode: multiply;
     position: fixed;
 }
+.back{
+    height: 10vh;
+    width: 6vh;
+    position: fixed;
+    left: 1vh;
+}
+.back img{
+    width: 100%;
+}
+.back img:hover{
+    cursor: pointer;
+}
 .logo{
     height: 15vh;
     transform: translateX(-5vw);

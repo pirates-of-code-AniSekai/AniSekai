@@ -22,9 +22,7 @@ async function getTrending() {
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
                                     <div title="LIKE" class="aboutmenu like"><img src="Icons/heart.png"></div>
-                                    <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
-                                    <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
-                                    <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
+                                    <div class="aboutmenu"><img title="SEE MORE" src="Icons/plus-sign.png"></div>
                                 </div>
                             </div>
                         </div>
@@ -98,9 +96,7 @@ async function getPopular() {
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
                                     <div title="LIKE" class="aboutmenu like"><img src="Icons/heart.png"></div>
-                                    <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
-                                    <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
-                                    <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
+                                    <div class="aboutmenu"><img title="SEE MORE" src="Icons/plus-sign.png"></div>
                                 </div>
                             </div>
                         </div>
@@ -150,9 +146,7 @@ async function getSpecial() {
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
                                     <div title="LIKE" class="aboutmenu like"><img src="Icons/heart.png"></div>
-                                    <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
-                                    <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
-                                    <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
+                                    <div class="aboutmenu"><img title="SEE MORE" src="Icons/plus-sign.png"></div>
                                 </div>
                             </div>
                         </div>
@@ -199,9 +193,7 @@ async function getMovies() {
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
                                     <div title="LIKE" class="aboutmenu like"><img src="Icons/heart.png"></div>
-                                    <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
-                                    <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
-                                    <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
+                                    <div class="aboutmenu"><img title="SEE MORE" src="Icons/plus-sign.png"></div>
                                 </div>
                             </div>
                         </div>
@@ -250,9 +242,7 @@ async function getRomance() {
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
                                     <div title="LIKE" class="aboutmenu like"><img src="Icons/heart.png"></div>
-                                    <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
-                                    <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
-                                    <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
+                                    <div class="aboutmenu"><img title="SEE MORE" src="Icons/plus-sign.png"></div>
                                 </div>
                             </div>
                         </div>
@@ -298,9 +288,7 @@ async function getAction() {
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
                                     <div title="LIKE" class="aboutmenu like"><img src="Icons/heart.png"></div>
-                                    <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
-                                    <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
-                                    <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
+                                    <div class="aboutmenu"><img title="SEE MORE" src="Icons/plus-sign.png"></div>
                                 </div>
                             </div>
                         </div>
@@ -346,9 +334,7 @@ async function getComedy() {
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
                                     <div title="LIKE" class="aboutmenu like"><img src="Icons/heart.png"></div>
-                                    <div class="aboutmenu"><img title="WISHLIST" src="Icons/wishlist.png"></div>
-                                    <div class="aboutmenu"><img title="SHARE" src="Icons/paper-plane.png"></div>
-                                    <div class="aboutmenu"><img title="NOTIFICATIONS" src="Icons/bell.png"></div>
+                                    <div class="aboutmenu"><img title="SEE MORE" src="Icons/plus-sign.png"></div>
                                 </div>
                             </div>
                         </div>

@@ -116,6 +116,10 @@ body::-webkit-scrollbar {
 .menuicons ul li{
     width: 4vw;
 }
+.mangaicon{
+    border: 1px solid;
+    padding: 0.4vh;
+}
 .profile-bar{
     width: 20vw;
     position: absolute;
@@ -187,12 +191,12 @@ body::-webkit-scrollbar {
     align-items: center;
     font-size: xx-large;
     font-weight: bolder;
-    transform: translateY(-100%);
-    transition: transform 1s ease;
+    /* transform: translateY(-100%); */
+    /* transition: transform 1s ease; */
 }
-.textdrop{
-    transform: translateY(0%);
-}
+/* .textdrop{
+    transform: translateY(0%);  
+} */
 .maincontent{
     margin-bottom: 25vh;
 }
