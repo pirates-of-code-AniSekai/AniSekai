@@ -23,6 +23,13 @@ body::-webkit-scrollbar {
     background-color:  #102b38;
     transition: width 0.3s ease;
 }
+.back{
+    height: 0vh;
+    width: 4vh;
+}
+.back img{
+    width: 100%;
+}
 .logo{
     display: flex;
     align-items: center;
@@ -38,8 +45,8 @@ body::-webkit-scrollbar {
     font-weight: bolder;
     transform: translateX(-55%);
 }
-.manganame, .reading, .details{
-    margin-top: 3vh;
+.manganame, .reading{
+    margin-top: 2.5vh;
     margin-left: 2vh;
 }
 .manganame p{
@@ -51,30 +58,19 @@ body::-webkit-scrollbar {
     color: rgba(190, 226, 226,0.75);
     font-size: medium;
 }
-.reading input{
-    background-color:transparent;
-    border: 1px solid;
-    padding: 1.2vh;
-    width: 12vw;
-    border-radius: 1vh;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-}
 .reading p{
     margin-bottom: 1vh;
 }
 .reading button{
-    background-color:#062f41;
+    background-color:#688c9c;
     border: none;
-    width: 4vw;
+    width: 6vw;
     margin-right: 1vw;
-    margin-top: 1vh;
+    margin-top: 2vh;
     border-radius: 1vh;
 }
-.details p{
-    font-size: larger;
-    position: relative;
-    top: 40vh;
+.reading button:hover{
+    background-color: #062431;
 }
 #fullScreenBtn{
     height: 2vh;
@@ -99,4 +95,25 @@ body::-webkit-scrollbar {
 }
 .manga.fullscreen{
     width: 100vw;
+}
+.chapters{
+    margin-top: 1vh;
+    height: 40vh;
+    width: 15vw;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color:  #bee2e2 transparent;
+}
+.chapter{
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    background-color: #062431;
+    margin-bottom: 0.5vh;
+    transition: transform 0.2s ease;
+    padding-left: 1vw;
+    border-radius: 1vh;
+}
+.chapter:hover{
+    transform: scaleX(0.95);
 }
