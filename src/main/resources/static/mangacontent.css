@@ -89,13 +89,6 @@ body::-webkit-scrollbar {
     width: 0;
     overflow: hidden;
 }
-.manga{
-    width: 80vw;
-    transition: width 0.3s ease;
-}
-.manga.fullscreen{
-    width: 100vw;
-}
 .chapters{
     margin-top: 1vh;
     height: 40vh;
@@ -116,4 +109,38 @@ body::-webkit-scrollbar {
 }
 .chapter:hover{
     transform: scaleX(0.95);
+}
+.manga{
+    width: 80vw;
+    transition: width 0.3s ease;
+}
+.manga.fullscreen{
+    width: 100vw;
+}
+.manga-pg{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.manga-pg img{
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.navigation{
+    position: absolute;
+    bottom: 1vh;
+    right: 5vw;
+    display: flex;
+    gap: 1vw;
+    margin-left: 1vw;
+}
+.navigation button{
+    background-color:#688c9c;
+    border: none;
+    width: 6vw;
+    border-radius: 1vh;
 }
