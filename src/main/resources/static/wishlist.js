@@ -13,8 +13,9 @@ async function fetchWatchList() {
         child.classList.add('box');
         child.innerHTML = `<img class="poster" src="${animeData.image}"</img>
                       <div class="btns">
-                    <button class="remove btn"><img src="Icons/close - Copy.png"></button>
-                    <button class="more btn"><a href="home.html"><img title="More Info" src="Icons/info.png" style="height: 6vh;"></a></button>
+                    <button class="remove btn"><img title="Remove From Wishlist" src="Icons/close - Copy.png" style="height: 8vh;"></button>
+                    <button class="more btn"><a href="home.html"><img title="More Info" src="Icons/info.png"
+                                style="height: 6vh;"></a></button>
                 </div>`;
         child.addEventListener(("click"),() => {
 
