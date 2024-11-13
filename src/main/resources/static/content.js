@@ -12,6 +12,24 @@ const recList = document.querySelector(".recList");
 const yearDiv = document.querySelector(".year");
 const playBtn = document.querySelector("#playBtn");
 
+document.querySelector('#watchlist').addEventListener("click",() => {
+
+    console.log(localStorage.getItem("user_id"));
+
+    const response =  fetch("http://localhost:8080/watchlist", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            userId: localStorage.getItem("user_id"),
+            animeId: anime_id
+        })
+    })
+
+    alert("added to watchlist");
+})
+
 const loadData = async () => {
     const response = await fetch(`${baseUrl}/${anime_id}`);
     const json = await response.json();
@@ -54,6 +72,8 @@ const loadData = async () => {
             window.location.href = "content.html";
         })
         recList.appendChild(child);
+
+
     })
 
     console.log(document.getElementById("genre1"));

@@ -40,24 +40,48 @@ async function getData() {
     console.log(json);
 
     const readingDataDiv = document.querySelector('.reading');
+    const chapterData = await getChapterData();
+
+
     readingDataDiv.innerHTML = `  <p>You are reading</p>
-            <p>Chapter ${localStorage.getItem('chapter_no')} of Vol ${localStorage.getItem('volume_no')}</p>
-            <h3 style="margin-top: 4vh;">Chapters</h3>
-            <div class="chapters">
-                <div class="chapter">Chapter 1</div>
-                <div class="chapter">Chapter 2</div>
-                <div class="chapter">Chapter 3</div>
-                <div class="chapter">Chapter 4</div>
-                <div class="chapter">Chapter 5</div>
-                <div class="chapter">Chapter 6</div>
-                <div class="chapter">Chapter 7</div>
-                <div class="chapter">Chapter 8</div>
-                <div class="chapter">Chapter 9</div>
-                <div class="chapter">Chapter 10</div>`;
+        <p>Chapter ${localStorage.getItem('chapter_no')} of Vol ${localStorage.getItem('volume_no')}</p>
+        <h3 style="margin-top: 4vh;">Chapters</h3>
+        <div class="chapters">
+        
+        </div>`;
+
+    // ${Object.values(chapterData.chapters).map(chapter => `
+    //         <div class="chapter chapterDiv"></div>
+    // `).join('')}
+
+    Object.values(chapterData.chapters).map(ch => {
+        let chapterDiv = document.createElement('div');
+        chapterDiv.classList.add('chapter');
+        chapterDiv.innerHTML = `Chapter ${ch.chapter}`
+        chapterDiv.addEventListener("click",() =>{
+            localStorage.setItem('episode_id',ch.id);
+            localStorage.setItem('chapter_no', ch.chapter);
+            // console.log(localStorage.getItem('episode_id'));
+            window.location.href = "mangacontent.html";
+        })
+        readingDataDiv.querySelector('.chapters').appendChild(chapterDiv);
+    })
+
+
+}
+
+async function getChapterData() {
+    const baseUrl = "https://api.mangadex.org/manga";
+    const id = localStorage.getItem('manga_id');
+    const response = await fetch(`${baseUrl}/${id}/aggregate`);
+    const json = await response.json();
+    console.log(json.volumes[localStorage.getItem('volume_no')]);
+    return json.volumes[localStorage.getItem('volume_no')];
 }
 
 getData();
 fetchPages();
+getChapterData();
 
 
 
