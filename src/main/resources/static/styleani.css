@@ -161,9 +161,9 @@ h2 {
     width: 100%;
     height: 100vh;
     position: absolute;
-    background-color: rgba(0, 0, 0,0.4);
+    background-color: rgba(0, 0, 0,0.6);
     z-index: 1;
-    display: none;
+    /* display: none; */
 }
 .banner {
     width: 100%;
@@ -174,30 +174,19 @@ h2 {
     background-image: url(Icons/Background1.jpeg);
     background-size: 100vw 100vh;
 }
-.nav{
-    display: flex;
-    justify-content: space-between;
-    height: 10vh;
-}
-.innernav{
-    display: flex;
-    height: 10vh;
-}
 .Anisekai{
-    height: 15vh;
-    position: relative;
-    bottom: 2vh;
+    height: 50vh;
+    position: absolute;
 }
 .AnisekaiName{
-    display: flex;
-    align-items: center;
     font-size: xx-large;
-    position: relative;
-    right: 3vw;
+    position: absolute;
+    top: 25%;
 }
 .loginbutton,.sign-up{
     position: relative;
     display: flex;
+    z-index: 5;
     justify-content: center;
     align-items: center;
     height: 6vh;
@@ -205,7 +194,7 @@ h2 {
     font-size: large;
     border: 0.1px solid;
     padding: 0.5vh 2vh;
-    margin-top: 1.5vh;
+    margin-top: 5vh;
     margin-right: 1vh;
     border-radius: 1vh;
     background-color: transparent;
@@ -249,9 +238,43 @@ h2 {
     transform: scale(1);
     transition: transform 0.5s ease;
 }
-.banner .slider .item img:hover{
+/* .banner .slider .item img:hover{
     transform: scale(1.05);
 }
 .banner .slider:has(img:hover) {
     animation-play-state: paused;
+} */
+.description{
+    margin-top: 8%;
+    z-index: 5;
+    position:absolute;
+    top: 5%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.website{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 60vh;
+}
+.content{
+    position: absolute;
+    top: 40%;
+    margin-top: 5vh;
+}
+.content h1{
+    font-size: x-large;
+    font-weight: bolder;
+    width: 55vw;
+}
+.content p{
+    font-size: xx-large;
+    font-weight: bolder;
+    width: 55vw;
+    margin-top: 8vh;
 }
