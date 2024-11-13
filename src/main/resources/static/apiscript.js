@@ -17,7 +17,7 @@ async function getTrending() {
             let childHtml = `<img class="animeImage" src=${data.image}>
                         <div class="aboutanime">
                         <div class="innerabout">
-                                <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english}</h3>
+                               <h3 style="font-weight:bolder; margin-bottom:1vh;">${data.title.english ? data.title.english : 'Title not available'}</h3>
                                 <p class="animecontent" style="font-size:1.7vh;text-align:justify;">${data.description}</p>
                                 <div class="aboutMenu"
                                     style="display: flex; justify-content: space-evenly; position: relative;top: 1vh;">
@@ -55,13 +55,13 @@ async function getTrending() {
             })
             trendingGridDiv.appendChild(child);
 
-
+            // data.title.english.split(' ').slice(0, 3).join(' ')
 
             json.results.map(data => {
                 let sliderItem = `<div class="item">
                 <img src="${data.cover}">
                 <div class="about">
-                    <h1>${data.title.english.split(' ').slice(0, 3).join(' ')}</h1>
+                    <h1>${data.title.english ? data.title.english.split(' ').slice(0, 3).join(' ') : 'Title not available'}</h1>
                     <span class="year">${data.releaseDate}</span><span>&#183</span>
                     <span id="genre1">${data.genres[0]}</span><span>&#183</span>
                     <span id="genre2">${data.genres[1]}</span><span>&#183</span>
@@ -75,10 +75,12 @@ async function getTrending() {
 
                sliderListDiv.innerHTML += sliderItem;
 
-                initializeSlider();
+
 
             })
         })
+
+        initializeSlider();
     } catch (error) {
         console.error(error)
     }
@@ -392,7 +394,7 @@ function initializeSlider() {
     let lengthItems = items.length - 1;
 
     next.onclick = function() {
-        active = active + 1 > lengthItems ? 0 : active + 1;
+        active = active +1 > lengthItems ? 0 : active + 1;
         reloadSlider();
     };
 
@@ -401,7 +403,7 @@ function initializeSlider() {
         reloadSlider();
     };
 
-    let refreshSlider = setInterval(() => { next.click(); }, 5000);
+    let refreshSlider = setInterval(() => { next.click(); }, 3000);
 
     function reloadSlider() {
         let checkLeft = items[active].offsetLeft;

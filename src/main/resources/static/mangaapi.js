@@ -27,13 +27,13 @@ async function getData() {
         <div style="display:flex;">
         <div class="sidepic"><img src=${imageUrl}></div>
         <div class="about">
-            <h1>${json.data.attributes.title.en}</h1>
+            <h1>${json.data.attributes.title.en.split(' ').slice(0, 3).join(' ') }</h1>
             <span class="year">${json.data.attributes.year}</span><span>&#183</span>
             <span id="genre1">${json.data.attributes.tags[1].attributes.name.en}</span><span>&#183</span>
             <span id="genre2">${json.data.attributes.tags[2].attributes.name.en}</span><span>&#183</span>
             <span id="genre3">${json.data.attributes.tags[3].attributes.name.en}</span>
             <p class="description">${json.data.attributes.description.en}<p>
-            <div><button id="Read Now">Read Now</button></div>
+            <div><button id="readNowBtn" id="Read Now">Read Now</button></div>
         </div>
         </div>`;
 
@@ -45,11 +45,11 @@ async function getData() {
     // let chaptersMap = mapChaptersByVolume(feedJson.data);
     // console.log(chaptersMap);
 
-    const readNowButton = document.getElementById("readNowButton");
+    const readNowButton = coverArtDiv.querySelector("#readNowBtn");
+    console.log(readNowButton);
     readNowButton.addEventListener("click", function() {
-        localStorage.clear();
-        localStorage.setItem('manga_id',feedJson.volumes[1].chapters[1].id);
-        window.location.href="manga.html";
+        localStorage.setItem('episode_id', feedJson.volumes[Object.keys(feedJson.volumes)[0]].chapters[Object.keys(feedJson.volumes[Object.keys(feedJson.volumes)[0]].chapters)[0]].id);
+        window.location.href = "mangacontent.html";
     });
     renderChaptersByVolume(feedJson.volumes);
 }
@@ -89,18 +89,15 @@ function renderChaptersByVolume(data) {
             chapterDiv.addEventListener("click",() => {
                 console.log(chapterData);
                 localStorage.setItem('episode_id',chapterData.id);
+                localStorage.setItem('volume_no', volumeData.volume);
+                localStorage.setItem('chapter_no', chapterData.chapter);
                 // console.log(localStorage.getItem('episode_id'));
                 window.location.href = "mangacontent.html";
             })
             
             chaptersDiv.appendChild(chapterDiv);
         }
-        
-        // Close the volume and chapters divs
-        // volumeHTML += `
-        //         </div>
-        //     </div>
-        // `;
+
         volumeDiv.appendChild(chaptersDiv);
         
         // Append the generated HTML for this volume to the container
