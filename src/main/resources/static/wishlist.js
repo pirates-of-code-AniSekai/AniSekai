@@ -11,11 +11,7 @@ async function fetchWatchList() {
         console.log(animeData);
         let child = document.createElement('div');
         child.classList.add('box');
-        child.innerHTML = `<img class="poster" src="${animeData.image}"</img>
-                      <div class="btns">
-                    <button class="remove btn"><img title="Remove" src="Icons/close.png" style="height: 4vh;"></button>
-                    <button class="more btn"><a href="home.html"><img title="More Info" src="Icons/about-us.png" style="height: 6vh;"></a></button>
-                </div>`;
+        child.innerHTML = `<img class="poster" src="${animeData.image}"</img>`;
         child.addEventListener(("click"),() => {
 
             localStorage.setItem("anime_id",animeData.id);
