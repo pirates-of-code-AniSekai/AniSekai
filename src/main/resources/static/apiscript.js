@@ -48,7 +48,7 @@ async function getTrending() {
             });
 
             child.querySelector(".animeImage").addEventListener("click",() => {
-                localStorage.clear();
+
                 localStorage.setItem("anime_id",data.id);
 
                  window.location.href = "content.html";
@@ -61,7 +61,7 @@ async function getTrending() {
                 let sliderItem = `<div class="item">
                 <img src="${data.cover}">
                 <div class="about">
-                    <h1>${data.title.english ? data.title.english.split(' ').slice(0, 3).join(' ') : 'Title not available'}</h1>
+                    <h1>${data.title.english ? data.title.english.split(' ').slice(0, 3).join(' ') : data.title.native.split(' ').slice(0, 3).join(' ')}</h1>
                     <span class="year">${data.releaseDate}</span><span>&#183</span>
                     <span id="genre1">${data.genres[0]}</span><span>&#183</span>
                     <span id="genre2">${data.genres[1]}</span><span>&#183</span>
@@ -124,7 +124,7 @@ async function getPopular() {
             });
 
             child.querySelector(".animeImage").addEventListener("click",() => {
-                localStorage.clear();
+
                 localStorage.setItem("anime_id",data.id);
 
                 window.location.href = "content.html";
@@ -173,7 +173,7 @@ async function getSpecial() {
             });
 
             child.querySelector(".animeImage").addEventListener("click",() => {
-                localStorage.clear();
+
                 localStorage.setItem("anime_id",data.id);
 
                 window.location.href = "content.html";
@@ -220,7 +220,7 @@ async function getMovies() {
             });
 
             child.querySelector(".animeImage").addEventListener("click",() => {
-                localStorage.clear();
+
                 localStorage.setItem("anime_id",data.id);
 
                 window.location.href = "content.html";
@@ -268,7 +268,7 @@ async function getRomance() {
                 alert("added to watchlist");
             });
             child.querySelector(".animeImage").addEventListener("click",() => {
-                localStorage.clear();
+
                 localStorage.setItem("anime_id",data.id);
 
                 window.location.href = "content.html";
@@ -314,7 +314,7 @@ async function getAction() {
                 alert("added to watchlist");
             });
             child.querySelector(".animeImage").addEventListener("click",() => {
-                localStorage.clear();
+
                 localStorage.setItem("anime_id",data.id);
 
                 window.location.href = "content.html";
@@ -360,7 +360,7 @@ async function getComedy() {
                 alert("added to watchlist");
             });
             child.querySelector(".animeImage").addEventListener("click",() => {
-                localStorage.clear();
+
                 localStorage.setItem("anime_id",data.id);
 
                 window.location.href = "content.html";
@@ -373,7 +373,7 @@ async function getComedy() {
 }
 
 function infoAnime(animeId) {
-    localStorage.clear();
+
     localStorage.setItem("anime_id", animeId);
     window.location.href = "content.html";
 }

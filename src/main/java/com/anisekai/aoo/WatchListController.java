@@ -2,6 +2,7 @@ package com.anisekai.aoo;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,5 +29,10 @@ public class WatchListController {
     public WatchList create(@RequestBody WatchList watchList) {
         System.out.println();
         return watchListRepository.save(watchList);
+    }
+
+    @DeleteMapping("/watchlist/{id}")
+    public void delete(@PathVariable int id) {
+        watchListRepository.deleteById(id);
     }
 }

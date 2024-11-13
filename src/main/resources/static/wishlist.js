@@ -14,14 +14,24 @@ async function fetchWatchList() {
         child.innerHTML = `<img class="poster" src="${animeData.image}"</img>
                       <div class="btns">
                     <button class="remove btn"><img title="Remove From Wishlist" src="Icons/close - Copy.png" style="height: 8vh;"></button>
-                    <button class="more btn"><a href="home.html"><img title="More Info" src="Icons/info.png"
-                                style="height: 6vh;"></a></button>
+                    <button class="more btn"><img title="More Info" src="Icons/info.png"
+                                style="height: 6vh;"></button>
                 </div>`;
-        child.addEventListener(("click"),() => {
+        child.querySelector('.more').addEventListener(("click"),() => {
 
             localStorage.setItem("anime_id",animeData.id);
 
             window.location.href = "content.html";
+        })
+
+        child.querySelector('.remove').addEventListener("click",()=>{
+            fetch(`http://localhost:8080/watchlist/${data.id}`, {
+                method: "DELETE"
+
+            })
+
+            alert('removed from watchlist');
+            location.reload();
         })
         container.appendChild(child);
     })
