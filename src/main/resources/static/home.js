@@ -28,7 +28,7 @@ profilebtn.addEventListener("click", (event) => {
 // let next=document.getElementById('next');
 // let active=0;
 // let lengthItems=items.length-1;
-//
+
 // next.onclick = function(){
 //   if(active+1>lengthItems){
 //     active=0;
@@ -42,7 +42,7 @@ profilebtn.addEventListener("click", (event) => {
 //     active=lengthItems;
 //   }
 //   else{
-//     active=active-1;
+//     active-=1;
 //   }
 //   reloadSlider();
 // }
@@ -61,4 +61,34 @@ profilebtn.addEventListener("click", (event) => {
 //     active=key;
 //     reloadSlider();
 //   })
+// });
+// let list = document.querySelector('.slider .list');
+// let items = document.querySelectorAll('.slider .list .item');
+// let active = 0;
+// let lengthItems = items.length - 1;
+
+// // function reloadSlider() {
+// //     let checkLeft = items[active].offsetLeft;
+// //     list.style.left = -checkLeft + 'px';
+// // }
+// function reloadSlider() {
+//   if (items.length > 0 && items[active]) {
+//       let checkLeft = items[active].offsetLeft;
+//       list.style.left = -checkLeft + 'px';
+//   } else {
+//       console.error('Items array is empty or active index is out of bounds.');
+//   }
+// }
+
+// let refreshSlider = setInterval(() => {
+//     active = (active + 1 > lengthItems) ? 0 : active + 1; 
+//     reloadSlider();
+// }, 3000);
+
+// list.addEventListener('mouseenter', () => clearInterval(refreshSlider));
+// list.addEventListener('mouseleave', () => {
+//     refreshSlider = setInterval(() => {
+//         active = (active + 1 > lengthItems) ? 0 : active + 1;
+//         reloadSlider();
+//     }, 3000);
 // });
